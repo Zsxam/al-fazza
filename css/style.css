@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 15px 0;
+    padding: 15px 60px;
     color: white;
 }
 
@@ -74,10 +74,16 @@ body {
 }
 
 .circular-item {
+    display: flex;
+    align-items: center;
     background: white;
     border-radius: 10px; /* Di gambar terlihat agak rounded kotak */
     padding: 10px;
-    width: 150px;
+    width: 300px;
+}
+
+.circular-item img {
+    width: 100%;
 }
 
 /* Product Grid */
@@ -87,7 +93,7 @@ body {
     gap: 20px;
     padding: 20px;
     background-color: #B6927B;
-    margin: 20px 50px;
+    margin: 20px 13%;
     border-radius: 5px;
 }
 
@@ -115,6 +121,14 @@ body {
 }
 
 .btn-small {
+    background-color: #deb49a;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    border-radius: 3px;
+}
+.btn-cart {
     background-color: #B6927B;
     color: white;
     border: none;
@@ -153,14 +167,20 @@ body {
 /* Behind the Bake Section */
 .behind-bake {
     display: flex;
-    margin: 20px 50px;
+    margin: 20px 13%;
     background-color: #B6927B;
     border-radius: 5px;
     overflow: hidden;
 }
 
-.bake-illustration { width: 60%; }
-.bake-illustration img { width: 100%; display: block; }
+.bake-illustration { 
+    width: 60%; 
+}
+
+.bake-illustration img { 
+    width: 100%; 
+    display: block; 
+}
 
 .bake-info {
     width: 40%;
@@ -216,6 +236,6 @@ body {
         flex-direction: column;
         align-items: center;
     }
-    .product-grid { grid-template-columns: 1fr; }
+    .product-grid { grid-template-columns: 1fr 1fr; }
     .bake-illustration, .bake-info { width: 100%; }
 }
