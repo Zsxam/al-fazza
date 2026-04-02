@@ -4,19 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AL-Fazza Bakery</title>
+    <!-- logo -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/logo.png">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Categories</a>
+        <div class="nav-logo">
+            <div class="logo"><img src="../assets/images/footer-logo.png" alt=""></div>
+            <h2>AL-Fazza Bakery</h2>
         </div>
-        <div class="logo">AL - Fazza Bakery</div>
-        <div class="nav-links">
-            <a href="#">Contact</a>
-            <a href="#">Blog</a>
-            <div class="profile-icon"></div>
+        <div class="nav">
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li>
+                    <select name="category" id="category-select">
+                        <option value="">Category</option>
+                        <option value="cakes">Cakes</option>
+                        <option value="pastries">Pastries</option>
+                        <option value="bread">Bread</option>
+                    </select>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="cart-icon" id="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
         </div>
     </nav>
 
@@ -50,13 +65,12 @@
                         <h3>Cheese</h3>
                         <span>Kue Bolu</span>
                     </div>
-                    <span class="heart">❤️</span>
                 </div>
                 <img src="../assets/images/cheese1 1.png" alt="Cheese">
                 <div class="card-footer">
                     <p>Rp 13.500</p>
                     <div>
-                        <button class="btn-cart">Add to Cart</button>
+                        <button class="btn-cart" onclick="addToCart('Cheese', 13500)">Add to Cart</button>
                         <button class="btn-small">Detail</button>
                     </div>
                 </div>
@@ -67,13 +81,12 @@
                         <h3>Meses</h3>
                         <span>Kue Bolu</span>
                     </div>
-                    <span class="heart">❤️</span>
                 </div>
                 <img src="../assets/images/coklat 1.png" alt="Meses">
                 <div class="card-footer">
                     <p>Rp 11.900</p>
                     <div>
-                        <button class="btn-cart">Add to Cart</button>
+                        <button class="btn-cart" onclick="addToCart('Meses', 11900)">Add to Cart</button>
                         <button class="btn-small">Detail</button>
                     </div>
                 </div>
@@ -84,13 +97,12 @@
                         <h3>Coffee Raisin</h3>
                         <span>Bolu Puding</span>
                     </div>
-                    <span class="heart">❤️</span>
                 </div>
                 <img src="../assets/images/kuepuding 1.png" alt="Coffee Raisin">
                 <div class="card-footer">
                     <p>Rp 31.700</p>
                     <div>
-                        <button class="btn-cart">Add to Cart</button>
+                        <button class="btn-cart" onclick="addToCart('Coffee Raisin', 31700)">Add to Cart</button>
                         <button class="btn-small">Detail</button>
                     </div>
                 </div>
@@ -101,13 +113,12 @@
                         <h3>Roti Coklat</h3>
                         <span>Roti</span>
                     </div>
-                    <span class="heart">❤️</span>
                 </div>
                 <img src="../assets/images/roticoklat 1.png" alt="Roti Coklat">
                 <div class="card-footer">
                     <p>Rp 11.000</p>
                     <div>
-                        <button class="btn-cart">Add to Cart</button>
+                        <button class="btn-cart" onclick="addToCart('Roti Coklat', 11000)">Add to Cart</button>
                         <button class="btn-small">Detail</button>
                     </div>
                 </div>
@@ -118,13 +129,12 @@
                         <h3>Coklat</h3>
                         <span>Bolu Coklat</span>
                     </div>
-                    <span class="heart">❤️</span>
                 </div>
                 <img src="../assets/images/cakecoklat 1.png" alt="Coklat">
                 <div class="card-footer">
                     <p>Rp 79.500</p>
                     <div>
-                        <button class="btn-cart">Add to Cart</button>
+                        <button class="btn-cart" onclick="addToCart('Coklat', 79500)">Add to Cart</button>
                         <button class="btn-small">Detail</button>
                     </div>
                 </div>
@@ -135,13 +145,12 @@
                         <h3>Chiffon Pandan</h3>
                         <span>Bolu Pandan</span>
                     </div>
-                    <span class="heart">❤️</span>
                 </div>
                 <img src="../assets/images/kuepandan 1.png" alt="Chiffon Pandan">
                 <div class="card-footer">
                     <p>Rp 76.500</p>
                     <div>
-                        <button class="btn-cart">Add to Cart</button>
+                        <button class="btn-cart" onclick="addToCart('Chiffon Pandan', 76500)">Add to Cart</button>
                         <button class="btn-small">Detail</button>
                     </div>
                 </div>
@@ -151,13 +160,13 @@
 
     <section class="promo-container">
         <div class="promo-card">
-            <img src="img/delivery-icon.png" alt="Delivery">
+            <i class="fa-solid fa-motorcycle"></i>
             <div class="promo-text">
                 <h3>Delivery Service for every corners!</h3>
             </div>
         </div>
         <div class="promo-card">
-            <img src="img/discount-icon.png" alt="Discount">
+            <i class="fa-solid fa-tag"></i>
             <div class="promo-text">
                 <h3>5% OFF for every Special Occasions!</h3>
             </div>
@@ -185,44 +194,36 @@
             <div class="circular-item"><img src="../assets/images/corong 1.png" alt="Corong"></div>
         </div>
     </section>
-
+    
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-col">
-                <h4>Help</h4>
-                <ul>
-                    <li>Shipping & Return Policy</li>
-                    <li>Help Center</li>
-                    <li>Terms & Conditions</li>
-                    <li>Privacy Policy</li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <ul>
-                    <li>About us</li>
-                    <li>Contact</li>
-                    <li>News</li>
-                    <li>Support</li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Shop</h4>
-                <ul>
-                    <li>Products</li>
-                    <li>Overview</li>
-                    <li>Pricing</li>
-                    <li>Releases</li>
-                </ul>
-            </div>
             <div class="footer-right">
-                <h3>AL - Fazza Bakery</h3>
+                <img src="../assets/images/footer-logo.png" alt="AL - Fazza Bakery Logo">
                 <div class="social-icons">
-                    <span>IG</span> <span>X</span> <span>FB</span> <span>YT</span>
+                    <span><i class="fa-brands fa-instagram"></i></span> 
+                    <span><i class="fa-brands fa-twitter"></i></span> 
+                    <span><i class="fa-brands fa-facebook"></i></span> 
+                    <span><i class="fa-brands fa-youtube"></i></span>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <div class="footer-list">
+                    <div class="footer-icons">
+                        <p><i class="fa-brands fa-whatsapp"></i></p>
+                        <p><i class="fa-solid fa-envelope"></i></p>
+                        <p><i class="fa-solid fa-map-marker-alt"></i></p>
+                    </div>
+                    <div class="footer-contact">
+                        <p>+62 812 3456 7890</p>
+                        <p>info@alfazzabakery.com</p>
+                        <p>Jl. Raya Bogor, Depok, Jawa Barat</p>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
-
+    
+    <script src="../js/script.js"></script>
 </body>
 </html>
