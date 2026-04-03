@@ -410,7 +410,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 25%;
+    gap: 15%;
 }
 
 .footer-list {
@@ -418,6 +418,15 @@ body {
 }
 
 .footer-col h4 { margin-bottom: 20px; }
+.footer-col {
+    width: 400px;
+}
+
+.location-map iframe {
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    margin-top: 20px;
+}
 
 .social-icons {
     font-size: 1.5rem;
