@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk - AL-Fazza Bakery</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="container-detail">
+        <section class="main-info">
+            <div class="product-gallery">
+                <img id="product-img" src="" alt="Produk">
+            </div>
+
+            <div class="product-order">
+                <div class="title-row">
+                    <h1 id="product-title">Loading...</h1>
+                    <div class="rating-badge">4.9 <i class="fas fa-star" style="color: #FFD700;"></i><i class="fas fa-star" style="color: #FFD700;"></i><i class="fas fa-star" style="color: #FFD700;"></i><i class="fas fa-star" style="color: #FFD700;"></i><i class="fas fa-star" style="color: #FFD700;"></i></div>
+
+                </div>
+                <p id="product-tagline" class="tagline">Soft Cheese Long Bread - Premium Creamy Filling</p>
+                <h2 id="product-price" class="price">Rp 0</h2>
+
+                <div class="order-controls" style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <button class="btn-primary-cart" onclick="addWithQty()" style="background: #222; color: white; padding: 10px 40px; border-radius: 5px; border: none; font-weight: bold; cursor: pointer;">Add to cart</button>
+                    <div class="qty-input" style="display: flex; border: 1px solid #ccc; border-radius: 5px; overflow: hidden;">
+                        <button onclick="changeQty(-1)" style="padding: 10px 15px; border: none; background: #f8f8f8; cursor: pointer;">-</button>
+                        <input type="number" id="qty" value="1" min="1" style="width: 50px; text-align: center; border: none;" readonly>
+                        <button onclick="changeQty(1)" style="padding: 10px 15px; border: none; background: #f8f8f8; cursor: pointer;">+</button>
+                    </div>
+                </div>
+
+                <div class="info-dropdown">
+                    <details open>
+                        <summary>Informasi Produk <i class="fas fa-chevron-up"></i></summary>
+                        <div class="content" style="margin-top: 10px; color: #555; font-size: 0.9rem;">
+                            <p><strong><i class="fas fa-cut"></i> Bahan Utama:</strong> <span id="bahan">Keju Cheddar Premium & Cream Cheese</span></p>
+                            <p><strong><i class="fas fa-eye"></i> Saran Penyimpanan:</strong> Simpan dalam wadah tertutup rapat. Tahan 2 hari di suhu ruang, 4-5 hari di dalam lemari pendingin. Hindari paparan sinar matahari langsung agar keju tidak kering.</p>
+                        </div>
+                    </details>
+                    <details open>
+                        <summary>Tentang Produk <i class="fas fa-chevron-up"></i></summary>
+                        <div class="content" style="margin-top: 10px; color: #555; font-size: 0.9rem;">
+                            <p id="product-description">Deskripsi lengkap...</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="review-section" style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 30px;">
+            <div class="review-section">
+                <div class="review-layout">
+                    
+                    <div class="review-left">
+                        <h3>Penilaian & Ulasan</h3>
+                        <div class="score-display">
+                            <span class="big-score">4,9</span><span class="max-score">/5</span>
+                        </div>
+                        <p class="total-reviews">(100 Ulasan)</p>
+                    </div>
+            
+                    <div class="review-middle">
+                        <div class="bar-row">
+                            <span class="star-num">5 <i class="fas fa-star"></i></span>
+                            <div class="progress-bg"><div class="progress-fill" style="width: 99%;"></div></div>
+                            <span class="bar-count">(99 ulasan)</span>
+                        </div>
+                        <div class="bar-row">
+                            <span class="star-num">4 <i class="fas fa-star"></i></span>
+                            <div class="progress-bg"><div class="progress-fill" style="width: 1%;"></div></div>
+                            <span class="bar-count">(1 ulasan)</span>
+                        </div>
+                        <div class="bar-row">
+                            <span class="star-num">3 <i class="fas fa-star"></i></span>
+                            <div class="progress-bg"><div class="progress-fill" style="width: 0%;"></div></div>
+                            <span class="bar-count">(0 ulasan)</span>
+                        </div>
+                        <div class="bar-row">
+                            <span class="star-num">2 <i class="fas fa-star"></i></span>
+                            <div class="progress-bg"><div class="progress-fill" style="width: 0%;"></div></div>
+                            <span class="bar-count">(0 ulasan)</span>
+                        </div>
+                        <div class="bar-row">
+                            <span class="star-num">1 <i class="fas fa-star"></i></span>
+                            <div class="progress-bg"><div class="progress-fill" style="width: 0%;"></div></div>
+                            <span class="bar-count">(0 ulasan)</span>
+                        </div>
+                    </div>
+            
+                    <div class="review-right">
+                        <h3 style="margin-bottom: 15px;">Ulasan</h3>
+                        
+                        <div class="review-item">
+                            <div class="stars-list">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-meta">
+                                <span>Oleh n*****l</span>
+                                <span>23 Juni 2024</span>
+                            </div>
+                            <div class="review-tag">Kualitas sangat baik</div>
+                            <div class="review-variant">Ukuran: International XL | Dibeli pada 22 Juni 2024</div>
+                        </div>
+                        
+                        <hr class="review-divider">
+                        
+                        <div class="review-item">
+                            <div class="stars-list">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-meta">
+                                <span>Oleh n*****l</span>
+                                <span>23 Juni 2024</span>
+                            </div>
+                            <div class="review-tag">Kualitas sangat baik</div>
+                            <div class="review-variant">Ukuran: International XL | Dibeli pada 22 Juni 2024</div>
+                        </div>
+                        <hr class="review-divider">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr style="margin-bottom: 40px; border-top: 1px solid #d1d5db;">
+        <section class="recommendation" style="margin-top: 60px;">
+            <h1 style="text-align: center; font-size: 3rem; margin-bottom: 80px;">Mungkin Anda Suka</h1>
+            <div id="recommendation-grid">
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-custom">
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="../assets/images/logo.png" alt="Al-Fazza Bakery" class="footer-logo">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+    
+            <div class="footer-right">
+                <h3 class="footer-title">Contact</h3>
+                <div class="footer-contact-info">
+                    <p><i class="fab fa-whatsapp"></i> +62 812 2131 5946</p>
+                    <p><i class="far fa-envelope"></i> info@alfazzabakery.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Edelweis III No.16 blok J2</p>
+                </div>
+                <img src="../assets/images/mapsfazza.png" alt="Lokasi Map" class="footer-map">
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
