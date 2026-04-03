@@ -1,3 +1,28 @@
+
+// Fungsi untuk memuat komponen HTML
+    function loadComponent(elementId, filePath) {
+        fetch(filePath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Gagal memuat ${filePath}`);
+                }
+                return response.text();
+            })
+            .then(htmlData => {
+                document.getElementById(elementId).innerHTML = htmlData;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    // Jalankan fungsi saat struktur DOM sudah siap
+    document.addEventListener("DOMContentLoaded", () => {
+        // Sesuaikan path ini dengan struktur folder kamu
+        loadComponent("header-placeholder", "header.html");
+        loadComponent("footer-placeholder", "footer.html");
+    });
+
 // Array untuk menampung pesanan user
 let cart = [];
 
