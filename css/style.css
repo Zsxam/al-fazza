@@ -21,7 +21,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 5%;
+    padding: 5px 5%;
     background-color: var(--primary-brown);
     color: var(--white);
 }
@@ -456,4 +456,145 @@ body {
     }
     .product-grid { grid-template-columns: 1fr 1fr; }
     .bake-illustration, .bake-info { width: 100%; }
+}
+
+.bg-light { background-color: #f8f9fa; }
+
+.checkout-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* Kolom Kiri */
+.checkout-form-section {
+    flex: 2;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.checkout-form-section h2 {
+    color: var(--primary-brown);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+.checkout-form-section h2:first-child { margin-top: 0; }
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.payment-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #e8f5e9;
+    padding: 15px;
+    border-radius: 5px;
+    color: #2e7d32;
+    margin-top: 20px;
+}
+
+/* Kolom Kanan */
+.checkout-summary-section {
+    flex: 1;
+    position: sticky;
+    top: 20px;
+}
+
+.summary-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.summary-header {
+    background-color: var(--primary-brown);
+    color: white;
+    padding: 15px;
+}
+
+.summary-header h3 { margin: 0; font-size: 1.1rem; }
+
+.order-list {
+    padding: 20px;
+    border-bottom: 1px dashed #eee;
+}
+
+.summary-totals {
+    padding: 20px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.grand-total {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--dark-brown);
+    margin-top: 15px;
+    border-top: 2px solid #eee;
+    padding-top: 15px;
+}
+
+.note-card textarea {
+    width: 100%;
+    border: none;
+    padding: 20px;
+    resize: none;
+    outline: none;
+}
+
+.btn-bayar-wa {
+    width: 100%;
+    background-color: #1a365d; /* Biru gelap untuk variasi */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-bayar-wa:hover { background-color: #0d1b2a; }
+
+@media (max-width: 768px) {
+    .checkout-container, .form-row { flex-direction: column; }
+    .checkout-form-section, .checkout-summary-section { width: 100%; }
 }
