@@ -270,3 +270,66 @@ function loadComponent(id, file) {
         }
     });
 }
+
+// ==========================================
+// 6. FUNGSI CUSTOM ORDER CAKE
+// ==========================================
+
+// Fungsi untuk memunculkan/menyembunyikan field alamat pengiriman
+function toggleAlamatCustom() {
+    const metode = document.getElementById('co_metode').value;
+    const alamatGroup = document.getElementById('co_alamat_group');
+    if (metode === 'Dikirim') {
+        alamatGroup.style.display = 'block';
+    } else {
+        alamatGroup.style.display = 'none';
+    }
+}
+
+// Fungsi Checkout Custom Order via WA
+function prosesCustomOrderWA() {
+    // Ambil data pemesan
+    const nama = document.getElementById('co_nama').value;
+    const nohp = document.getElementById('co_nohp').value;
+    
+    // Ambil spesifikasi
+    const ukuran = document.getElementById('co_ukuran').value;
+    const bentuk = document.getElementById('co_bentuk').value;
+    const rasa = document.getElementById('co_rasa').value;
+    const isian = document.getElementById('co_isian').value;
+    
+    // Ambil desain
+    const tema = document.getElementById('co_tema').value;
+    const tulisan = document.getElementById('co_tulisan').value || "-";
+    
+    // Ambil pengiriman & catatan
+    const tanggal = document.getElementById('co_tanggal').value;
+    const metode = document.getElementById('co_metode').value;
+    const alamat = document.getElementById('co_alamat').value || "-";
+    const catatan = document.getElementById('co_catatan').value || "-";
+
+    // Validasi input wajib
+    if (!nama || !nohp || !tema || !tanggal) {
+        return alert("Mohon lengkapi Nama, No HP, Tema/Warna, dan Tanggal Diperlukan!");
+    }
+    if (metode === "Dikirim" && !alamat) {
+        return alert("Mohon isi alamat pengiriman!");
+    }
+
+    // Format Pesan WA
+    let wa = `Halo *AL-Fazza Bakery*, saya ingin melakukan *Custom Order Cake*.\n\n`;
+    wa += `👤 *DATA PEMESAN*\n- Nama: ${nama}\n- HP: ${nohp}\n\n`;
+    wa += `🎂 *SPESIFIKASI KUE*\n- Ukuran: ${ukuran}\n- Bentuk: ${bentuk}\n- Base Cake: ${rasa}\n- Isian: ${isian}\n\n`;
+    wa += `🎨 *DETAIL DESAIN*\n- Tema/Warna: ${tema}\n- Tulisan di Kue: ${tulisan}\n\n`;
+    wa += `🚚 *PENGIRIMAN*\n- Tanggal: ${tanggal}\n- Metode: ${metode}\n`;
+    
+    if (metode === "Dikirim") {
+        wa += `- Alamat: ${alamat}\n`;
+    }
+    
+    wa += `\n📝 *Catatan Tambahan:* ${catatan}\n\n`;
+    wa += `_(Saya akan mengirimkan gambar referensi desainnya setelah pesan ini)_`;
+
+    // Ubah nomor WA di bawah ini dengan nomor admin Al-Fazza yang sama seperti di prosesCheckoutWA
+    window.open(`https://wa.me/6289524032593?text=${encodeURIComponent(wa)}`);
+}

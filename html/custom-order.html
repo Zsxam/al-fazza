@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Order Cake - AL-Fazza Bakery</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/logo.png">
+    <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body class="bg-light">
+
+    <header id="header-placeholder"></header>
+
+    <div class="checkout-container">
+        <div class="checkout-form-section">
+            <h2>Informasi Pemesan</h2>
+            <form id="customOrderForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nama Pemesan *</label>
+                        <input type="text" id="co_nama" required placeholder="Masukkan nama lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label>Nomor HP / WhatsApp *</label>
+                        <input type="tel" id="co_nohp" required placeholder="Contoh: 081234567890">
+                    </div>
+                </div>
+
+                <h2>Spesifikasi Kue</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Ukuran / Diameter (cm) *</label>
+                        <select id="co_ukuran" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                            <option value="16 cm">16 cm</option>
+                            <option value="20 cm">20 cm</option>
+                            <option value="24 cm">24 cm</option>
+                            <option value="Custom">Lainnya (Jelaskan di catatan)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Bentuk Kue *</label>
+                        <select id="co_bentuk" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                            <option value="Bulat">Bulat</option>
+                            <option value="Kotak">Kotak</option>
+                            <option value="Hati (Heart)">Hati</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Base Cake (Rasa Bolu) *</label>
+                        <select id="co_rasa" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                            <option value="Bolu Coklat">Bolu Coklat</option>
+                            <option value="Bolu Pandan">Bolu Pandan</option>
+                            <option value="Bolu Vanilla">Bolu Vanilla</option>
+                            <option value="Bolu Mocca">Bolu Mocca</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Filling / Isian *</label>
+                        <select id="co_isian" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                            <option value="Selai Strawberry">Selai Strawberry</option>
+                            <option value="Selai Blueberry">Selai Blueberry</option>
+                            <option value="Coklat Ganache">Coklat Ganache</option>
+                            <option value="Cream Cheese">Cream Cheese</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h2>Detail Desain</h2>
+                <div class="form-group">
+                    <label>Tema & Warna Dominan *</label>
+                    <input type="text" id="co_tema" required placeholder="Contoh: Tema Spiderman, dominan merah dan biru">
+                </div>
+                <div class="form-group">
+                    <label>Tulisan di Atas Kue</label>
+                    <input type="text" id="co_tulisan" placeholder="Contoh: Happy Birthday Mama ke-50">
+                </div>
+
+                <h2>Waktu & Pengiriman</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tanggal Diperlukan *</label>
+                        <input type="date" id="co_tanggal" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Metode *</label>
+                        <select id="co_metode" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;" onchange="toggleAlamatCustom()">
+                            <option value="Ambil di Toko">Ambil di Toko</option>
+                            <option value="Dikirim">Dikirim ke Alamat</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" id="co_alamat_group" style="display: none;">
+                    <label>Alamat Pengiriman</label>
+                    <textarea id="co_alamat" rows="3" placeholder="Isi detail alamat pengiriman jika memilih 'Dikirim'"></textarea>
+                </div>
+
+                <div class="payment-info">
+                    <i class="fa-solid fa-camera"></i>
+                    <p>Setelah menekan tombol kirim ke WA, mohon lampirkan gambar referensi kue Anda di ruang chat.</p>
+                </div>
+            </form>
+        </div>
+
+        <div class="checkout-summary-section">
+            <div class="summary-card">
+                <div class="summary-header">
+                    <h3>Cara Pesan Custom Cake</h3>
+                </div>
+                <div style="padding: 20px; font-size: 0.95rem; color: #444; line-height: 1.6;">
+                    <ol style="padding-left: 15px; margin-bottom: 0;">
+                        <li style="margin-bottom: 10px;">Isi formulir spesifikasi kue di samping dengan lengkap.</li>
+                        <li style="margin-bottom: 10px;">Klik <b>Lanjut ke WhatsApp</b> untuk mengirim data.</li>
+                        <li style="margin-bottom: 10px;">Kirimkan <b>foto referensi/contoh desain</b> kue yang Anda inginkan di chat WhatsApp admin kami.</li>
+                        <li style="margin-bottom: 10px;">Admin akan menghitung total harga berdasarkan tingkat kesulitan desain.</li>
+                        <li>Lakukan pembayaran DP setelah harga disepakati.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="summary-card note-card">
+                <div class="summary-header">
+                    <h3>Catatan Tambahan</h3>
+                </div>
+                <textarea id="co_catatan" rows="3" placeholder="Contoh: Tolong krimnya jangan terlalu manis, dll."></textarea>
+            </div>
+
+            <button class="btn-bayar-wa" onclick="prosesCustomOrderWA()">KIRIM REQUEST KE WHATSAPP</button>
+        </div>
+    </div>
+
+    <footer id="footer-placeholder"></footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
