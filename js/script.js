@@ -243,7 +243,7 @@ function prosesCheckoutWA() {
         wa += `- ${i.quantity}x ${i.name} (Rp ${sub.toLocaleString('id-ID')})\n`;
     });
     
-    window.open(`https://wa.me/6285863101630?text=${encodeURIComponent(wa + `\n*Total: Rp ${total.toLocaleString('id-ID')}*`)}`);
+    window.open(`https://wa.me/6285183203378?text=${encodeURIComponent(wa + `\n*Total: Rp ${total.toLocaleString('id-ID')}*`)}`);
 }
 
 // Fungsi Fetch Component
