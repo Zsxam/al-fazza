@@ -368,40 +368,91 @@ body.bg-pastel {
 
 .promo-card img { width: 60px; }
 
-/* Behind the Bake Section */
-.behind-bake {
+/* =========================================
+   ABOUT US SECTION
+   ========================================= */
+.about-us {
     display: flex;
-    margin: 20px 13%;
-    background-color: var(--primary-brown);
-    border-radius: 5px;
+    align-items: center;
+    margin: 0 13% 40px;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(166, 124, 82, 0.1); /* Shadow dengan hint warna coklat */
     overflow: hidden;
+    border: 1px solid #f2e8df;
 }
 
-.bake-illustration { 
-    width: 60%; 
+.about-image { 
+    width: 50%; 
+    height: 100%;
 }
 
-.bake-illustration img { 
+.about-image img { 
     width: 100%; 
+    height: 100%;
+    min-height: 400px;
+    object-fit: cover; 
     display: block; 
 }
 
-.bake-info {
-    width: 40%;
-    padding: 40px;
+.about-content {
+    width: 50%;
+    padding: 40px 50px;
+    background-color: var(--white);
+}
+
+.about-content h3 {
+    font-size: 2rem;
+    color: var(--dark-brown);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.about-content p {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.btn-primary-about {
+    background-color: var(--primary-brown);
     color: white;
-}
-
-.btn-white {
-    background: white;
-    color: var(--primary-brown);
     border: none;
-    padding: 8px 20px;
+    padding: 12px 28px;
     border-radius: 5px;
-    margin-top: 15px;
+    font-size: 1.05rem;
+    font-weight: bold;
     cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s ease;
 }
 
+.btn-primary-about:hover {
+    background-color: var(--dark-brown);
+}
+
+/* Update Responsive untuk About Us */
+@media (max-width: 768px) {
+    .about-us {
+        flex-direction: column;
+        margin: 0 5% 40px;
+    }
+    .about-image, .about-content { 
+        width: 100%; 
+    }
+    .about-image img {
+        min-height: 250px;
+    }
+    .about-content {
+        padding: 30px 20px;
+        text-align: center;
+    }
+    .about-content p {
+        text-align: center;
+    }
+}
 /* --- HALAMAN KATEGORI --- */
 .kategori-container {
     max-width: 1200px;
@@ -1183,5 +1234,95 @@ body.bg-pastel {
     }
     .footer-contact-info p {
         justify-content: center;
+    }
+}
+
+/* =========================================
+   HALAMAN ABOUT US (about.html)
+   ========================================= */
+.about-page-container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+    background-color: transparent;
+}
+
+.about-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 2.2rem;
+    color: var(--dark-brown);
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.about-text p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.mission-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #444;
+}
+
+.mission-list li {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.about-img-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Membuat gaya bingkai seperti polaroid di gambar referensi */
+.framed-img {
+    background-color: white;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    display: inline-block; /* Agar menyesuaikan ukuran gambar */
+    max-width: 100%;
+}
+
+.framed-img img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsif untuk HP (Gambar selalu di atas teks saat di HP) */
+@media (max-width: 768px) {
+    .about-row {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+    
+    /* Membalik urutan baris kedua di HP agar gambar selalu di atas teks */
+    .about-row.reverse-mobile {
+        flex-direction: column;
+    }
+    
+    .about-text h2 {
+        text-align: center;
     }
 }
