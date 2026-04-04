@@ -723,3 +723,553 @@ body.bg-pastel {
     .checkout-container, .form-row { flex-direction: column; }
     .checkout-form-section, .checkout-summary-section { width: 100%; }
 }
+
+
+/* =========================================
+   HALAMAN DETAIL PRODUK
+   ========================================= */
+
+/* Wadah Utama Detail */
+.container-detail {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Membagi Gambar (Kiri) dan Info (Kanan) menjadi 2 Kolom */
+.main-info {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+/* Kolom Gambar Kiri */
+.product-gallery {
+    flex: 1; /* Mengambil 50% lebar */
+    background-color: #f8f8f8;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.product-gallery img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Kolom Info Kanan */
+.product-order {
+    flex: 1; /* Mengambil 50% lebar */
+}
+
+/* Baris Judul, Rating, dan Love */
+.title-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.title-row h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    color: #000;
+}
+
+.rating-badge {
+    font-size: 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.wishlist-btn {
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-left: auto; /* Mendorong tombol love mentok ke kanan */
+    transition: 0.3s;
+}
+
+.wishlist-btn:hover {
+    background: #f0f0f0;
+}
+
+/* Tagline & Harga */
+.tagline {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #000;
+}
+
+/* Tombol Add to Cart & Qty */
+.order-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.btn-primary-cart {
+    background-color: #222;
+    color: #fff;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary-cart:hover {
+    background-color: #444;
+}
+
+.qty-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.qty-input button {
+    background: #fff;
+    border: none;
+    padding: 12px 15px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.qty-input input {
+    width: 40px;
+    text-align: center;
+    border: none;
+    font-size: 1.1rem;
+    outline: none;
+    pointer-events: none; /* Agar tidak bisa diketik manual */
+}
+
+/* Dropdown Informasi (Accordion) */
+.info-dropdown details {
+    border-top: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.info-dropdown details:last-child {
+    border-bottom: 1px solid #eee;
+}
+
+.info-dropdown summary {
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    list-style: none; /* Hilangkan panah bawaan */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+.info-dropdown .content {
+    margin-top: 15px;
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   BAGIAN ULASAN (UPDATE 3 KOLOM)
+   ========================================= */
+   .review-section {
+    border-top: 1px solid #ddd;
+    padding-top: 40px;
+    margin-top: 40px;
+    font-family: Arial, sans-serif;
+}
+
+.review-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Kolom 1 Kiri: Angka */
+.review-left {
+    flex: 1;
+    text-align: center;
+}
+
+.review-left h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    color: #000;
+}
+
+.score-display {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.big-score {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.max-score {
+    font-size: 1.5rem;
+    color: #888;
+    margin-left: 5px;
+}
+
+.total-reviews {
+    color: #888;
+    margin-top: 5px;
+}
+
+/* Kolom 2 Tengah: Bar */
+.review-middle {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 45px; /* Menyejajarkan dengan angka */
+}
+
+.bar-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.star-num {
+    width: 30px;
+    text-align: right;
+}
+
+.star-num i {
+    color: #ffd700;
+    font-size: 0.8rem;
+}
+
+.progress-bg {
+    flex: 1;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #fdd835;
+    border-radius: 5px;
+}
+
+.bar-count {
+    width: 70px;
+    font-size: 0.8rem;
+}
+
+/* Kolom 3 Kanan: Komentar */
+.review-right {
+    flex: 2;
+}
+
+.review-item {
+    margin-bottom: 15px;
+}
+
+.stars-list i {
+    color: #fdd835;
+    font-size: 1.1rem;
+    margin-right: 3px;
+    margin-bottom: 10px;
+}
+
+.review-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.review-tag {
+    display: inline-block;
+    background-color: #e0f7fa;
+    color: #0097a7;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.review-variant {
+    color: #aaa;
+    font-size: 0.85rem;
+}
+
+.review-divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+/* Responsif HP */
+@media (max-width: 768px) {
+    .review-layout {
+        flex-direction: column;
+    }
+    .review-middle {
+        padding-top: 0;
+        width: 100%;
+    }
+}
+/* =========================================
+   KARTU "MUNGKIN ANDA SUKA" (DETAIL PRODUK)
+   ========================================= */
+#recommendation-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card-rek {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Header: Judul & Ikon Hati */
+.card-rek-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.title-cat h3 {
+    font-size: 1.3rem;
+    color: #222;
+    margin: 0 0 4px 0;
+    font-weight: 800;
+}
+
+.title-cat span {
+    font-size: 1.05rem;
+    color: #8fa0b5;
+    font-weight: 600;
+}
+
+.heart-icon {
+    color: #e65c5c; /* Warna merah */
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+/* Gambar & Rating */
+.card-rek-img-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.card-rek-img-wrapper img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.rek-rating {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.rek-rating i {
+    color: #fdd835; /* Bintang kuning */
+}
+
+/* Footer: Harga & Tombol */
+.card-rek-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rek-price {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #111;
+    margin: 0;
+}
+
+.btn-detail-rek {
+    background-color: #aa8d73; /* Coklat elegan */
+    color: white;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.btn-detail-rek:hover {
+    background-color: #8c735d;
+}
+
+/* Responsif */
+@media (max-width: 992px) {
+    #recommendation-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 576px) {
+    #recommendation-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+FOOTER LAYOUT (Sesuai Figma)
+========================================= */
+.footer-custom {
+    background-color: #726255; /* Warna background coklat */
+    color: white;
+    padding: 60px 20px;
+    margin-top: 60px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Memisahkan kiri dan kanan */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* --- Kiri: Logo & Sosmed --- */
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+}
+
+.footer-logo {
+    width: 500px;
+    margin-bottom:-80px;
+    margin-top: -90px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.6rem;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.social-icons a:hover {
+    opacity: 0.7;
+}
+
+/* --- Kanan: Kontak & Map --- */
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 100%;
+}
+
+.footer-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+}
+
+.footer-contact-info {
+    margin-bottom: 20px;
+}
+
+.footer-contact-info p {
+    font-size: 1.1rem;
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-contact-info i {
+    font-size: 1.4rem;
+    width: 25px; /* Agar semua ikon sejajar rapi */
+    text-align: center;
+}
+
+.footer-map {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Responsif untuk layar HP */
+@media (max-width: 768px) {
+    .footer-container {
+        justify-content: center;
+        text-align: center;
+    }
+    .footer-right {
+        align-items: center;
+    }
+    .footer-contact-info p {
+        justify-content: center;
+    }
+}
