@@ -153,7 +153,7 @@ body.bg-pastel {
     height: 100vh;
     background-color: #fff;
     box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-    z-index: 1000;
+    z-index: 1200;
     transition: right 0.4s ease-in-out; /* Animasi mulus saat ditarik */
     display: flex;
     flex-direction: column;
@@ -264,7 +264,7 @@ body.bg-pastel {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.5);
-    z-index: 999; /* Posisinya di bawah sidebar, tapi di atas konten web */
+    z-index: 1150;
     visibility: hidden;
     opacity: 0;
     transition: all 0.4s ease;
