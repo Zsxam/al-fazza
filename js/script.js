@@ -16,7 +16,7 @@ const produkToko = [
     { id: 10, kategori: 'bolu', nama: 'Bolu Pandan', tipe: 'Bolu Gulung', harga: 85000, rating: 4.9, gambar: '../assets/images/bolu/10-bolugulungpandan.png', deskripsi: 'Bolu gulung pandan tradisional dengan isi krim vanilla yang lembut dan manis pas.', bahan: 'Ekstrak Pandan, Krim Vanilla, Tepung Terigu, Telur' },
     { id: 11, kategori: 'bolu', nama: 'Raisin Muffin', tipe: 'Bolu', harga: 11900, rating: 4.9, gambar: '../assets/images/bolu/11-raisinmuffin.png', deskripsi: 'Muffin klasik yang padat namun lembut, dipenuhi dengan potongan kismis manis di setiap gigitannya.', bahan: 'Kismis, Tepung Terigu, Mentega, Telur, Baking Powder' },
     { id: 12, kategori: 'bolu', nama: 'Coklat Muffin', tipe: 'Bolu', harga: 11900, rating: 4.9, gambar: '../assets/images/bolu/12-chocolatemuffin.png', deskripsi: 'Muffin cokelat kaya rasa dengan taburan choco chips lezat yang lumer di mulut.', bahan: 'Bubuk Kakao, Choco Chips, Tepung Terigu, Mentega, Susu' },
-
+    
     // --- Kategori PASTRY ---
     { id: 13, kategori: 'pastry', nama: 'Mushroom', tipe: 'Pastry', harga: 11900, rating: 4.9, gambar: '../assets/images/pastry/1-mushroom-pastry.png', deskripsi: 'Pastry renyah dengan isian krim jamur gurih yang creamy dan kaya rempah.', bahan: 'Jamur Champignon, Krim Susu, Kulit Pastry, Bawang Bombay' },
     { id: 14, kategori: 'pastry', nama: 'Chicken Pies', tipe: 'Pastry', harga: 11900, rating: 4.9, gambar: '../assets/images/pastry/2-chicken-pie.png', deskripsi: 'Pai gurih dengan isian daging ayam cincang, wortel, dan kentang dalam saus creamy yang nikmat.', bahan: 'Daging Ayam Cincang, Sayuran Campur, Susu, Kulit Pie' },
@@ -30,6 +30,7 @@ const produkToko = [
     { id: 22, kategori: 'pastry', nama: 'Almond Pastry', tipe: 'Pastry', harga: 11900, rating: 4.9, gambar: '../assets/images/pastry/10-almond-pastry.png', deskripsi: 'Pastry renyah berlapis dengan taburan kacang almond iris dan lapisan gula karamel.', bahan: 'Kulit Pastry, Kacang Almond, Gula Karamel, Mentega' },
     { id: 23, kategori: 'pastry', nama: 'Apple Pie', tipe: 'Pastry', harga: 16500, rating: 4.9, gambar: '../assets/images/pastry/11-apple-pie.png', deskripsi: 'Pie klasik dengan isian apel segar berempah kayu manis yang manis dan sedikit asam.', bahan: 'Buah Apel, Kayu Manis, Gula Palem, Kulit Pie' },
     { id: 24, kategori: 'pastry', nama: 'Sausage Brood', tipe: 'Pastry', harga: 11900, rating: 4.9, gambar: '../assets/images/pastry/12-sausage-brood.png', deskripsi: 'Sosis sapi premium berbalut kulit pastry renyah yang dipanggang hingga keemasan.', bahan: 'Sosis Sapi Premium, Kulit Puff Pastry, Telur, Mentega' },
+    { id: 49, kategori: 'pastry', nama: 'Bolen Pisang', tipe: 'Pastry', harga: 30000, rating: 4.9, gambar: '../assets/images/pisangbolen 1.png', deskripsi: 'Perpaduan pisang dan cokelat lumer atau keju gurih yang dibalut kulit pastry berlapis yang renyah di luar namun lembut di dalam.', bahan: 'Tepung Terigu, Korsvet, Susu, Pisang, Coklat/Keju Batang' },
 
     // --- Kategori COOKIES ---
     { id: 25, kategori: 'cookies', nama: 'Cookies Coklat', tipe: 'Cookies', harga: 76000, rating: 4.9, gambar: '../assets/images/cookies/1-cookies-coklat.png', deskripsi: 'Kue kering cokelat klasik yang renyah dengan rasa cokelat pekat yang otentik.', bahan: 'Bubuk Cokelat, Tepung Terigu, Mentega, Telur, Gula' },
@@ -268,6 +269,45 @@ function loadComponent(id, file) {
                 window.location.href = 'checkout.html';
             });
             updateCartUI(); // Update UI keranjang yang ada di header
+
+            // ---- Hamburger Menu Logic ----
+            const hamburger = document.getElementById('hamburger-btn');
+            const mainNav = document.getElementById('main-nav');
+            const navOverlay = document.getElementById('nav-overlay');
+            const categoriesDropdown = document.getElementById('categories-dropdown');
+
+            function openNav() {
+                hamburger?.classList.add('active');
+                mainNav?.classList.add('open');
+                navOverlay?.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeNav() {
+                hamburger?.classList.remove('active');
+                mainNav?.classList.remove('open');
+                navOverlay?.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            hamburger?.addEventListener('click', () => {
+                mainNav?.classList.contains('open') ? closeNav() : openNav();
+            });
+
+            navOverlay?.addEventListener('click', closeNav);
+
+            // Toggle dropdown dalam mobile nav
+            categoriesDropdown?.querySelector('.dropbtn')?.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    categoriesDropdown.classList.toggle('open');
+                }
+            });
+
+            // Tutup nav saat salah satu link diklik
+            mainNav?.querySelectorAll('.nav-links li:not(.dropdown) a, .dropdown-menu a').forEach(link => {
+                link.addEventListener('click', closeNav);
+            });
         }
     });
 }

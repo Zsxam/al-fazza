@@ -3,10 +3,15 @@
         <div class="logo"><img src="../assets/images/footer-logo.png" alt=""></div>
         <h2>AL - Fazza Bakery</h2>
     </div>
-    <div class="nav">
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="nav" id="main-nav">
         <ul class="nav-links">
             <li><a href="./index.html" class="active">Home</a></li>
-            <li class="dropdown">
+            <li class="dropdown" id="categories-dropdown">
                 <a href="#" class="dropbtn">Categories</a>
                 <ul class="dropdown-menu">
                     <li><a href="./kategori.html?jenis=bolu">Aneka Bolu</a></li>
@@ -23,6 +28,7 @@
         </div>
     </div>
 </nav>
+<div class="nav-overlay" id="nav-overlay"></div>
 
 <div class="cart-sidebar" id="cart-sidebar">
     <div class="cart-header">

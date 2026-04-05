@@ -293,6 +293,10 @@ body.bg-pastel {
     margin-bottom: 20px;
 }
 
+.hero-image {
+    min-width: 40%;
+}
+
 .btn-buy {
     background-color: var(--primary-brown);
     color: white;
@@ -454,7 +458,7 @@ body.bg-pastel {
     align-items: center;
     padding: 15px;
     width: 38%;
-    gap: 15px;
+    gap: 50px;
 }
 
 .promo-card i {
@@ -494,7 +498,6 @@ body.bg-pastel {
 .about-content {
     width: 50%;
     padding: 40px 50px;
-    background-color: var(--white);
 }
 
 .about-content h3 {
@@ -529,26 +532,6 @@ body.bg-pastel {
     background-color: var(--dark-brown);
 }
 
-/* Update Responsive untuk About Us */
-@media (max-width: 768px) {
-    .about-us {
-        flex-direction: column;
-        margin: 0 5% 40px;
-    }
-    .about-image, .about-content { 
-        width: 100%; 
-    }
-    .about-image img {
-        min-height: 250px;
-    }
-    .about-content {
-        padding: 30px 20px;
-        text-align: center;
-    }
-    .about-content p {
-        text-align: center;
-    }
-}
 /* --- HALAMAN KATEGORI --- */
 .kategori-container {
     max-width: 1200px;
@@ -663,17 +646,6 @@ body.bg-pastel {
 
 .footer-col p {
     font-size: 1.0rem;
-    font-weight: normal;
-}
-
-/* Responsive simpel */
-@media (max-width: 768px) {
-    .hero, .promo-container, .behind-bake, .product-grid, .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
-    .product-grid { grid-template-columns: 1fr 1fr; }
-    .bake-illustration, .bake-info { width: 100%; }
 }
 
 .bg-light { background-color: #f8f9fa; }
@@ -811,11 +783,6 @@ body.bg-pastel {
 }
 
 .btn-bayar-wa:hover { background-color: #0d1b2a; }
-
-@media (max-width: 768px) {
-    .checkout-container, .form-row { flex-direction: column; }
-    .checkout-form-section, .checkout-summary-section { width: 100%; }
-}
 
 
 /* =========================================
@@ -1120,16 +1087,6 @@ body.bg-pastel {
     margin: 20px 0;
 }
 
-/* Responsif HP */
-@media (max-width: 768px) {
-    .review-layout {
-        flex-direction: column;
-    }
-    .review-middle {
-        padding-top: 0;
-        width: 100%;
-    }
-}
 /* =========================================
    KARTU "MUNGKIN ANDA SUKA" (DETAIL PRODUK)
    ========================================= */
@@ -1140,40 +1097,13 @@ body.bg-pastel {
     margin-top: 20px;
 }
 
-/* Responsif */
-@media (max-width: 992px) {
-    #recommendation-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media (max-width: 576px) {
-    #recommendation-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Responsif untuk layar HP */
-@media (max-width: 768px) {
-    .footer-container {
-        justify-content: center;
-        text-align: center;
-    }
-    .footer-right {
-        align-items: center;
-    }
-    .footer-contact-info p {
-        justify-content: center;
-    }
-}
-
 /* =========================================
    HALAMAN ABOUT US (about.html)
    ========================================= */
 .about-page-container {
     max-width: 1100px;
     margin: 60px auto;
-    padding: 0 20px;
-    background-color: transparent;
+    /* padding: 0 20px; */
 }
 
 .about-row {
@@ -1238,24 +1168,6 @@ body.bg-pastel {
     display: block;
 }
 
-/* Responsif untuk HP (Gambar selalu di atas teks saat di HP) */
-@media (max-width: 768px) {
-    .about-row {
-        flex-direction: column;
-        gap: 30px;
-        margin-bottom: 50px;
-    }
-    
-    /* Membalik urutan baris kedua di HP agar gambar selalu di atas teks */
-    .about-row.reverse-mobile {
-        flex-direction: column;
-    }
-    
-    .about-text h2 {
-        text-align: center;
-    }
-}
-
 /* =========================================
    CUSTOM CAKE BANNER (index.html)
    ========================================= */
@@ -1288,16 +1200,6 @@ body.bg-pastel {
     color: #f2e8df;
 }
 
-@media (max-width: 768px) {
-    .custom-cake-banner {
-        margin: 0 5% 40px;
-        padding: 40px 20px;
-    }
-    .custom-cake-content h3 {
-        font-size: 2rem;
-    }
-}
-
 /* 1. Memberikan efek animasi transisi yang mulus pada panah */
 summary .arrow-icon {
     transition: transform 0.3s ease;
@@ -1306,4 +1208,541 @@ summary .arrow-icon {
 /* 2. Saat tag <details> memiliki atribut 'open' (terbuka), putar panah 180 derajat ke atas */
 details[open] summary .arrow-icon {
     transform: rotate(180deg);
+}
+
+/* =========================================
+   HAMBURGER MENU (MOBILE NAV)
+   ========================================= */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+    background: none;
+    border: none;
+    z-index: 1100;
+}
+
+.hamburger span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: var(--white);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================================
+   RESPONSIVE — TABLET (≤ 992px)
+   ========================================= */
+@media (max-width: 992px) {
+    /* Navbar */
+    .nav {
+        gap: 30px;
+    }
+    .nav-links {
+        gap: 30px;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+    .nav-logo h2 {
+        font-size: 1.1rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 40px 8%;
+        gap: 30px;
+    }
+
+    .hero-image {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .hero-image img{
+        width: 100%;
+    }
+
+    /* Product grid */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 20px 5%;
+    }
+
+    /* Kategori grid */
+    .kategori-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .promo-container {
+        align-items: center;
+        padding: 15px 5%;
+        gap: 12px;
+    }
+
+    .promo-card {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .promo-card i {
+        font-size: 3rem;
+        padding: 10px;
+    }
+
+    /* About us section (homepage) */
+    .about-us {
+        margin: 0 5% 40px;
+    }
+
+    /* Custom cake banner */
+    .custom-cake-banner {
+        margin: 0 5% 60px;
+    }
+
+    /* Recommendation grid */
+    #recommendation-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Detail produk */
+    .main-info {
+        gap: 30px;
+    }
+
+    /* Checkout */
+    .checkout-container {
+        padding: 0 15px;
+    }
+
+    .about-page-container {
+        padding: 50px;
+    }
+
+    .footer-content {
+        padding: 0 50px;
+    }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE (≤ 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    /* ---- NAVBAR ---- */
+    .hamburger {
+        display: flex;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 320px;
+        height: 100vh;
+        background-color: var(--dark-brown);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 80px 30px 40px;
+        gap: 0;
+        z-index: 1050;
+        transition: right 0.35s ease;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+    }
+
+    .nav.open {
+        right: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 14px 0;
+        font-size: 1.1rem;
+    }
+
+    /* Dropdown inside mobile nav */
+    .dropdown-menu {
+        position: static;
+        display: block;
+        box-shadow: none;
+        background: rgba(255,255,255,0.08);
+        border-radius: 0;
+        margin-top: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .dropdown.open .dropdown-menu {
+        max-height: 300px;
+    }
+
+    .dropdown-menu li a {
+        color: rgba(255,255,255,0.8);
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    .dropdown-menu li a:hover {
+        background-color: rgba(255,255,255,0.1);
+        color: white;
+        padding-left: 25px;
+    }
+
+    .cart-icon {
+        margin-top: 25px;
+        font-size: 1.3rem;
+    }
+
+    /* Overlay untuk mobile nav */
+    .nav-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 1040;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.35s ease;
+    }
+    .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+        flex-direction: column-reverse;
+        padding: 30px 5%;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-image {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .hero-image img{
+        width: 80%;
+    }
+
+    /* ---- POPULAR BAKERY ---- */
+    .item-list {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 0 10px;
+    }
+
+    .circular-item {
+        width: calc(50% - 6px);
+    }
+
+    /* ---- NEW BAKERY GRID ---- */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 20px 3%;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .card-header {
+        padding: 15px 15px 0;
+    }
+
+    .card-img-wrapper img {
+        padding: 0 15px;
+    }
+
+    .card-footer {
+        padding: 0 15px 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .card-footer div {
+        display: flex;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .btn-add-cart, .btn-brown {
+        flex: 1;
+        text-align: center;
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+
+    /* ---- PROMO CONTAINER ---- */
+    .promo-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 5%;
+        gap: 12px;
+    }
+
+    .promo-card {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .promo-card i {
+        font-size: 3rem;
+        padding: 10px;
+    }
+
+    /* ---- ABOUT US (HOMEPAGE) ---- */
+    .about-us {
+        flex-direction: column;
+        margin: 0 5% 40px;
+    }
+
+    .about-image,
+    .about-content {
+        width: 100%;
+    }
+
+    .about-image img {
+        min-height: 220px;
+    }
+
+    .about-content {
+        padding: 25px 20px;
+        text-align: center;
+    }
+
+    .about-content p {
+        text-align: center;
+    }
+
+    /* ---- CUSTOM CAKE BANNER ---- */
+    .custom-cake-banner {
+        margin: 0 5% 40px;
+        padding: 40px 20px;
+    }
+
+    .custom-cake-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .custom-cake-content p {
+        font-size: 0.95rem;
+    }
+
+    /* ---- SECTION TITLE ---- */
+    .section-title {
+        font-size: 1.5rem;
+        margin: 30px 0 15px;
+    }
+
+    /* ---- FOOTER ---- */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .footer-right {
+        align-items: center;
+    }
+
+    .footer-col {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .footer-list {
+        justify-content: center;
+    }
+
+    /* ---- KATEGORI PAGE ---- */
+    .banner-wrapper {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .promo-banner h2 {
+        font-size: 1.3rem;
+    }
+
+    .kategori-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    /* ---- DETAIL PRODUK ---- */
+    .main-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .product-gallery,
+    .product-order {
+        flex: unset;
+        width: 100%;
+    }
+
+    .title-row h1 {
+        font-size: 1.6rem;
+    }
+
+    .price {
+        font-size: 1.4rem;
+    }
+
+    .order-controls {
+        flex-wrap: wrap;
+    }
+
+    .btn-primary-cart {
+        flex: 1;
+        padding: 12px 20px;
+    }
+
+    .review-layout {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .review-middle {
+        padding-top: 0;
+        width: 100%;
+    }
+
+    #recommendation-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    /* ---- CHECKOUT & CUSTOM ORDER ---- */
+    .checkout-container {
+        flex-direction: column;
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    .checkout-form-section,
+    .checkout-summary-section {
+        width: 100%;
+    }
+
+    .checkout-summary-section {
+        position: static;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* ---- ABOUT PAGE ---- */
+    .about-row {
+        flex-direction: column-reverse;
+        gap: 25px;
+        margin-bottom: 45px;
+    }
+
+    .about-row.reverse-mobile {
+        flex-direction: column;
+    }
+
+    .about-text h2 {
+        text-align: center;
+        font-size: 1.7rem;
+    }
+
+    .about-text p {
+        text-align: center;
+    }
+
+    /* ---- CART SIDEBAR ---- */
+    .cart-sidebar {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   RESPONSIVE — SMALL MOBILE (≤ 480px)
+   ========================================= */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.7rem;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .circular-item {
+        width: calc(50% - 6px);
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 10px;
+        margin: 10px 2%;
+    }
+
+    .kategori-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #recommendation-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .custom-cake-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .nav {
+        width: 85%;
+    }
+
+    .logo img {
+        height: 55px;
+    }
+
+    .navbar h2 {
+        font-size: 1rem;
+    }
 }
