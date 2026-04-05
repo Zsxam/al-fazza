@@ -7,6 +7,7 @@
 
 :root {
     --primary-brown: #a67c52;
+    --secondary: #997777;
     --dark-brown: #4a3b32;
     --bg-cream: #fdfaf6;
     --white: #ffffff;
@@ -75,6 +76,72 @@ body.bg-pastel {
     padding: 2px 6px;
     border-radius: 50%;
     font-weight: bold;
+}
+
+/* =========================================
+   DROPDOWN MENU NAVIGASI
+   ========================================= */
+/* Memastikan dropdown posisinya relatif terhadap menu utamanya */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Kotak Dropdown (Disembunyikan secara default) */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Muncul tepat di bawah tulisan Categories */
+    left: -30%;
+    text-align: center;
+    /* transform: translateX(-50%); */
+    background-color: var(--white);
+    min-width: 180px; /* Lebar kotak dropdown */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* Bayangan lembut */
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 1000;
+    list-style: none; /* Menghilangkan titik bullet */
+    margin-top: 15px; /* Jarak sedikit dari navbar utama */
+}
+
+/* Jembatan tak terlihat agar dropdown tidak hilang saat mouse turun */
+.dropdown::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    bottom: -20px;
+    left: 0;
+}
+
+/* Gaya tulisan link di dalam dropdown */
+.dropdown-menu li a {
+    color: var(--text-dark, #333); /* Mengubah warna tulisan jadi gelap */
+    padding: 10px 20px;
+    display: block;
+    font-size: 1rem;
+    font-weight: normal;
+    transition: all 0.3s ease;
+}
+
+/* Efek saat link di dalam dropdown disorot/di-hover */
+.dropdown-menu li a:hover {
+    background-color: var(--primary-brown);
+    color: var(--white);
+    padding-left: 25px; /* Efek geser teks sedikit ke kanan yang elegan */
+}
+
+/* Menampilkan dropdown SAAT mouse menyorot menu Categories */
+.dropdown:hover .dropdown-menu {
+    display: block;
+    animation: fadeIn 0.3s ease; /* Tambahan animasi muncul perlahan */
+}
+
+/* Animasi sederhana */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* --- CART SIDEBAR --- */
@@ -213,7 +280,7 @@ body.bg-pastel {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px 10%;
+    padding: 50px 15%;
     gap: 50px;
 }
 
@@ -278,7 +345,7 @@ body.bg-pastel {
 
 .card {
     background: white;
-    padding: 15px;
+    /* padding: 15px; */
     border-radius: 12px;
 }
 
@@ -288,20 +355,59 @@ body.bg-pastel {
     padding: 20px 30px 0;
 }
 
-.card h3, .card p {
-    font-size: 1.6rem;
-    font-weight: bold;
-}
-
-.card span {
-    font-size: 1.2rem;
-}
-
-.card img {
+.card-img-wrapper {
+    position: relative;
     width: 100%;
+    margin-bottom: 15px;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    /* height: 220px; */
     border-radius: 5px;
     margin: 10px 0;
     padding: 0 30px;
+    object-fit: cover;
+    display: block;
+}
+
+.rating {
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.rating i {
+    color: #fdd835; /* Bintang kuning */
+}
+
+.title-cat h3 {
+    font-size: 1.3rem;
+    color: #222;
+    margin: 0 0 4px 0;
+    font-weight: 800;
+}
+
+.title-cat span {
+    font-size: 1.05rem;
+    color: #8fa0b5;
+    font-weight: 600;
+}
+
+
+.card h3, .card p {
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 .card-footer {
@@ -311,30 +417,20 @@ body.bg-pastel {
     padding: 0 30px 20px;
 }
 
-.btn-small, .btn-add-cart {
+.btn-add-cart {
+    background-color: var(--secondary); /* Coklat bata */
     color: white;
     border: none;
     padding: 10px 20px;
-    font-size: 1.1rem;
     border-radius: 5px;
-    cursor: pointer; 
-    transition: all 0.3s ease; 
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .btn-add-cart:hover {
     background-color: var(--dark-brown);
 }
 
-.btn-small:hover {
-    background-color: #c4997d;
-}
-
-.btn-small {
-    background-color: #deb49a;
-}
-.btn-add-cart {
-    background-color: var(--primary-brown);
-}
 /* Container Utility */
 .section-title {
     text-align: center;
@@ -390,7 +486,7 @@ body.bg-pastel {
 .about-image img { 
     width: 100%; 
     height: 100%;
-    min-height: 400px;
+    min-height: 530px;
     object-fit: cover; 
     display: block; 
 }
@@ -489,6 +585,9 @@ body.bg-pastel {
     font-weight: bold;
     cursor: pointer;
 }
+.btn-brown:hover {
+    background-color: var(--dark-brown);
+}
 
 /* Header Kategori (Judul & View All) */
 .kategori-header {
@@ -515,63 +614,6 @@ body.bg-pastel {
     position: relative;
     box-shadow: 0 4px 10px rgba(0,0,0,0.03);
     width: 100%;
-}
-
-/* Style Card Baru (Sesuai Gambar) */
-.product-card-new {
-    background: white;
-    border-radius: 12px;
-    padding: 15px;
-    position: relative;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-}
-
-.card-header-new {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 10px;
-}
-
-.title-area h4 { margin: 0; font-size: 1.1rem; color: #333; }
-.title-area span { font-size: 0.8rem; color: #888; }
-.heart-icon { color: #ff4d4d; cursor: pointer; }
-
-.rating-badge {
-    position: absolute;
-    top: 65px;
-    left: 20px;
-    background: rgba(255,255,255,0.9);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.product-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.card-footer-new {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.price { font-weight: bold; font-size: 1.1rem; color: #333; margin: 0; }
-.btn-detail {
-    background-color: #b5805f;
-    color: white;
-    border: none;
-    padding: 5px 15px;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    cursor: pointer;
 }
 
 /* Footer Styling */
@@ -620,7 +662,7 @@ body.bg-pastel {
 }
 
 .footer-col p {
-    font-size: 1.3rem;
+    font-size: 1.0rem;
     font-weight: normal;
 }
 
@@ -839,21 +881,6 @@ body.bg-pastel {
     display: flex;
     align-items: center;
     gap: 5px;
-}
-
-.wishlist-btn {
-    background: transparent;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    margin-left: auto; /* Mendorong tombol love mentok ke kanan */
-    transition: 0.3s;
-}
-
-.wishlist-btn:hover {
-    background: #f0f0f0;
 }
 
 /* Tagline & Harga */
@@ -1111,104 +1138,6 @@ body.bg-pastel {
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     margin-top: 20px;
-}
-
-.card-rek {
-    background: transparent;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-/* Header: Judul & Ikon Hati */
-.card-rek-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 12px;
-}
-
-.title-cat h3 {
-    font-size: 1.3rem;
-    color: #222;
-    margin: 0 0 4px 0;
-    font-weight: 800;
-}
-
-.title-cat span {
-    font-size: 1.05rem;
-    color: #8fa0b5;
-    font-weight: 600;
-}
-
-.heart-icon {
-    color: #e65c5c; /* Warna merah */
-    font-size: 1.4rem;
-    cursor: pointer;
-}
-
-/* Gambar & Rating */
-.card-rek-img-wrapper {
-    position: relative;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.card-rek-img-wrapper img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-}
-
-.rek-rating {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    font-weight: 800;
-    color: #333;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.rek-rating i {
-    color: #fdd835; /* Bintang kuning */
-}
-
-/* Footer: Harga & Tombol */
-.card-rek-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.rek-price {
-    font-size: 1.3rem;
-    font-weight: 900;
-    color: #111;
-    margin: 0;
-}
-
-.btn-detail-rek {
-    background-color: #aa8d73; /* Coklat elegan */
-    color: white;
-    border: none;
-    padding: 8px 24px;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background 0.3s ease;
-}
-
-.btn-detail-rek:hover {
-    background-color: #8c735d;
 }
 
 /* Responsif */

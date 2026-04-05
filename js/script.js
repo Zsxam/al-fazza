@@ -4,7 +4,7 @@
 // Semua data produk kini terpusat di satu array ini
 const produkToko = [
     // --- Kategori BOLU ---
-    { id: 1, kategori: 'bolu', nama: 'Cheese Cake', tipe: 'Kue Bolu', harga: 13600, rating: 4.9, gambar: '../assets/images/bolu/1-bolukeju.png', deskripsi: 'Premium Cheese Long Cake dengan roti sisir premium dan cream cheese gurih.', bahan: 'Keju Cheddar, Cream Cheese, Tepung Terigu, Telur' },
+    { id: 1, kategori: 'bolu', nama: 'Cheese Cake', tipe: 'Kue Bolu', harga: 13500, rating: 4.9, gambar: '../assets/images/bolu/1-bolukeju.png', deskripsi: 'Premium Cheese Long Cake dengan roti sisir premium dan cream cheese gurih.', bahan: 'Keju Cheddar, Cream Cheese, Tepung Terigu, Telur' },
     { id: 2, kategori: 'bolu', nama: 'Meses', tipe: 'Kue Bolu', harga: 11900, rating: 4.9, gambar: '../assets/images/bolu/2-bolumeses.png', deskripsi: 'Roti lembut dengan olesan krim manis dan taburan meses cokelat klasik.', bahan: 'Meses Cokelat, Krim Manis, Tepung Terigu, Mentega' },
     { id: 3, kategori: 'bolu', nama: 'Coffee Raisin', tipe: 'Bolu Puding', harga: 31700, rating: 4.9, gambar: '../assets/images/bolu/3-bolupuding.png', deskripsi: 'Bolu aroma kopi berlapis puding segar dengan kismis pilihan.', bahan: 'Ekstrak Kopi, Kismis, Agar-agar, Telur' },
     { id: 4, kategori: 'bolu', nama: 'Coklat', tipe: 'Bolu Coklat', harga: 79500, rating: 4.9, gambar: '../assets/images/bolu/4-bolucoklat.png' },
@@ -61,7 +61,7 @@ const produkToko = [
 ];
 
 // ==========================================
-// 2. STATE &inisialisasi
+// 2. STATE & inisialisasi
 // ==========================================
 let cart = JSON.parse(localStorage.getItem('alfazza_cart')) || [];
 
@@ -136,15 +136,17 @@ function renderKategoriProduk() {
     if (judul && filterJenis) judul.textContent = `Aneka ${filterJenis.charAt(0).toUpperCase() + filterJenis.slice(1)}`;
 
     grid.innerHTML = produk.map(p => `
-        <div class="kategori-card product-card-new">
-            <div class="card-header-new">
-                <div class="title-area"><h4>${p.nama}</h4><span>${p.tipe}</span></div>
+        <div class="card">
+            <div class="card-header">
+                <div class="title-cat"><h3>${p.nama}</h3><span>${p.tipe}</span></div>
             </div>
-            <div class="rating-badge">⭐ ${p.rating}</div>
-            <img src="${p.gambar}" alt="${p.nama}" class="product-img">
-            <div class="card-footer-new">
-                <p class="price">Rp ${p.harga.toLocaleString('id-ID')}</p>
-                <button class="btn-detail" onclick="window.location.href='detail.html?id=${p.id}'">Detail</button>
+            <div class="card-img-wrapper">
+                <div class="rating"><i class="fa-solid fa-star"></i>${p.rating}</div>
+                <img src="${p.gambar}" alt="${p.nama}">
+            </div>
+            <div class="card-footer">
+                <p>Rp ${p.harga.toLocaleString('id-ID')}</p>
+                <button class="btn-brown" onclick="window.location.href='detail.html?id=${p.id}'">Detail</button>
             </div>
         </div>`).join('');
 }
@@ -181,17 +183,17 @@ function renderDetailProduk() {
     const gridRek = document.getElementById('recommendation-grid');
     if (gridRek) {
         gridRek.innerHTML = produkToko.filter(p => p.id !== data.id).slice(0, 4).map(item => `
-            <div class="card-rek">
-                <div class="card-rek-header">
+            <div class="card">
+                <div class="card-header">
                     <div class="title-cat"><h3>${item.nama}</h3><span>${item.tipe}</span></div>
                 </div>
-                <div class="card-rek-img-wrapper">
-                    <div class="rek-rating"><i class="fa-solid fa-star"></i> ${item.rating}</div>
+                <div class="card-img-wrapper">
+                    <div class="rating"><i class="fa-solid fa-star"></i> ${item.rating}</div>
                     <img src="${item.gambar}" alt="${item.nama}">
                 </div>
-                <div class="card-rek-footer">
-                    <p class="rek-price">Rp ${item.harga.toLocaleString('id-ID')}</p>
-                    <button class="btn-detail-rek" onclick="window.location.href='detail.html?id=${item.id}'">Detail</button>
+                <div class="card-footer">
+                    <p>Rp ${item.harga.toLocaleString('id-ID')}</p>
+                    <button class="btn-brown" onclick="window.location.href='detail.html?id=${item.id}'">Detail</button>
                 </div>
             </div>`).join('');
     }
@@ -243,7 +245,7 @@ function prosesCheckoutWA() {
         wa += `- ${i.quantity}x ${i.name} (Rp ${sub.toLocaleString('id-ID')})\n`;
     });
     
-    window.open(`https://wa.me/6285183203378?text=${encodeURIComponent(wa + `\n*Total: Rp ${total.toLocaleString('id-ID')}*`)}`);
+    window.open(`https://wa.me/6281221315946?text=${encodeURIComponent(wa + `\n*Total: Rp ${total.toLocaleString('id-ID')}*`)}`);
 }
 
 // Fungsi Fetch Component
@@ -331,5 +333,5 @@ function prosesCustomOrderWA() {
     wa += `_(Saya akan mengirimkan gambar referensi desainnya setelah pesan ini)_`;
 
     // Ubah nomor WA di bawah ini dengan nomor admin Al-Fazza yang sama seperti di prosesCheckoutWA
-    window.open(`https://wa.me/6289524032593?text=${encodeURIComponent(wa)}`);
+    window.open(`https://wa.me/6281221315946?text=${encodeURIComponent(wa)}`);
 }
