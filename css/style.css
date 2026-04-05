@@ -943,6 +943,10 @@ body.bg-pastel {
     line-height: 1.6;
     font-size: 0.95rem;
 }
+.info-divider {
+    margin-top: 20px;
+    margin-bottom:20px;
+}
 
 /* =========================================
    BAGIAN ULASAN (UPDATE 3 KOLOM)
@@ -1096,7 +1100,11 @@ body.bg-pastel {
     gap: 30px;
     margin-top: 20px;
 }
-
+.recommendation-title {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
 /* =========================================
    HALAMAN ABOUT US (about.html)
    ========================================= */

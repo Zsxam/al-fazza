@@ -24,30 +24,34 @@
                 <p id="product-tagline" class="tagline">Soft Cheese Long Bread - Premium Creamy Filling</p>
                 <h2 id="product-price" class="price">Rp 0</h2>
 
-                <div class="order-controls" style="display: flex; gap: 15px; margin-bottom: 20px;">
-                    <button class="btn-primary-cart" style="background: #222; color: white; padding: 10px 40px; border-radius: 5px; border: none; font-weight: bold; cursor: pointer;">Add to cart</button>
-                    <div class="qty-input" style="display: flex; border: 1px solid #ccc; border-radius: 5px; overflow: hidden;">
-                        <button onclick="changeQty(-1)" style="padding: 10px 15px; border: none; background: #f8f8f8; cursor: pointer;">-</button>
-                        <input type="number" id="qty" value="1" min="1" style="width: 50px; text-align: center; border: none;" readonly>
-                        <button onclick="changeQty(1)" style="padding: 10px 15px; border: none; background: #f8f8f8; cursor: pointer;">+</button>
+                <div class="order-controls">
+                    <button class="btn-primary-cart">Add to cart</button>
+                    <div class="qty-input">
+                        <button onclick="changeQty(-1)">-</button>
+                        <input type="number" id="qty" value="1" min="1" readonly>
+                        <button onclick="changeQty(1)">+</button>
                     </div>
                 </div>
 
                 <div class="info-dropdown">
                     <details open>
                         <summary>Informasi Produk <i class="fas fa-chevron-down arrow-icon"></i></summary>
-                        <hr style="margin-bottom: 20px; border-top: 1px solid #d1d5db; margin-top:13px;">
+                        
+                        <hr class="info-divider">
 
-                        <div class="content" style="margin-top: 10px; color: #555; font-size: 0.9rem;">
+                        <div class="content">
                             <p><strong><i class="fa-solid fa-wheat-awn"></i> Bahan Utama:</strong> <span id="bahan">Keju Cheddar Premium & Cream Cheese</span></p>
-                            <hr style="margin-bottom: 20px; border-top: 1px solid #d1d5db; margin-top:13px;">
+                            
+                            <hr class="info-divider">
+                            
                             <p><strong><i class="fa-solid fa-jar"></i> Saran Penyimpanan:</strong> Simpan dalam wadah tertutup rapat. Tahan 2 hari di suhu ruang, 4-5 hari di dalam lemari pendingin. Hindari paparan sinar matahari langsung agar keju tidak kering.</p>
-                            <hr style="margin-bottom: 10px; border-top: 1px solid #d1d5db; margin-top:13px;">
+                            
+                            <hr class="info-divider">
                         </div>
                     </details>
                     <details open>
                         <summary>Tentang Produk <i class="fas fa-chevron-down arrow-icon"></i></summary>
-                        <div class="content" style="margin-top: 10px; color: #555; font-size: 0.9rem;">
+                        <div class="content">
                             <p id="product-description">Deskripsi lengkap...</p>
                         </div>
                     </details>
@@ -55,9 +59,8 @@
             </div>
         </section>
 
-        <section class="review-section" style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 30px;">
+        <section class="review-section">
             <div class="review-layout">
-                
                 <div class="review-left">
                     <h3>Penilaian & Ulasan</h3>
                     <div class="score-display">
@@ -95,18 +98,18 @@
                 </div>
         
                 <div class="review-right">
-                    <h3 style="margin-bottom: 15px;">Ulasan</h3>
+                    <h3 class="review-title">Ulasan</h3>
                     
                     <div class="review-item">
                         <div class="stars-list">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <div class="review-meta">
-                            <span>Oleh n*****l</span>
-                            <span>23 Juni 2024</span>
+                            <span>Oleh Mel**i</span>
+                            <span>20 Juni 2024</span>
                         </div>
                         <div class="review-tag">Kualitas sangat baik</div>
-                        <div class="review-variant">Ukuran: International XL | Dibeli pada 22 Juni 2024</div>
+                        <div class="review-variant">Adminnya ramah banget dan ada banyak jenis untuk bakery pastrynya, sangat recommended banget buat kalian.</div>
                     </div>
                     
                     <hr class="review-divider">
@@ -116,21 +119,22 @@
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <div class="review-meta">
-                            <span>Oleh n*****l</span>
+                            <span>Oleh Nu**l</span>
                             <span>23 Juni 2024</span>
                         </div>
                         <div class="review-tag">Kualitas sangat baik</div>
-                        <div class="review-variant">Ukuran: International XL | Dibeli pada 22 Juni 2024</div>
+                        <div class="review-variant">Kuenya mantap dan teksturnya juga lembut, cocok untuk dinikmati di akhir pekan. </div>
                     </div>
                     <hr class="review-divider">
                 </div>
             </div>
         </section>
-        <hr style="margin-bottom: 40px; border-top: 1px solid #d1d5db;">
-        <section class="recommendation" style="margin-top: 60px;">
-            <h1 style="text-align: center; font-size: 3rem; margin-bottom: 80px;">Mungkin Anda Suka</h1>
-            <div id="recommendation-grid">
-            </div>
+
+        <hr class="section-divider">
+
+        <section class="recommendation">
+            <h1 class="recommendation-title">Mungkin Anda Suka</h1>
+            <div id="recommendation-grid"></div>
         </section>
     </main>
 
