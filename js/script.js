@@ -31,6 +31,9 @@ const produkToko = [
     { id: 23, kategori: 'pastry', nama: 'Apple Pie', tipe: 'Pastry', harga: 16500, rating: 4.9, gambar: '../assets/images/pastry/11-apple-pie.png', deskripsi: 'Pie klasik dengan isian apel segar berempah kayu manis yang manis dan sedikit asam.', bahan: 'Buah Apel, Kayu Manis, Gula Palem, Kulit Pie' },
     { id: 24, kategori: 'pastry', nama: 'Sausage Brood', tipe: 'Pastry', harga: 11900, rating: 4.9, gambar: '../assets/images/pastry/12-sausage-brood.png', deskripsi: 'Sosis sapi premium berbalut kulit pastry renyah yang dipanggang hingga keemasan.', bahan: 'Sosis Sapi Premium, Kulit Puff Pastry, Telur, Mentega' },
     { id: 49, kategori: 'pastry', nama: 'Bolen Pisang', tipe: 'Pastry', harga: 30000, rating: 4.9, gambar: '../assets/images/pisangbolen 1.png', deskripsi: 'Perpaduan pisang dan cokelat lumer atau keju gurih yang dibalut kulit pastry berlapis yang renyah di luar namun lembut di dalam.', bahan: 'Tepung Terigu, Korsvet, Susu, Pisang, Coklat/Keju Batang' },
+    { id: 50, kategori: 'pastry', nama: 'Cheese Roll', tipe: 'Pastry', harga: 35000, rating: 4.9, gambar: '../assets/images/cheeseroll 1.png', deskripsi: '', bahan: '' },
+    { id: 51, kategori: 'pastry', nama: 'Croissant', tipe: 'Pastry', harga: 30000, rating: 4.9, gambar: '../assets/images/krasong 1.png', deskripsi: '', bahan: '' },
+    { id: 52, kategori: 'pastry', nama: 'Kue Corong', tipe: 'Pastry', harga: 30000, rating: 4.9, gambar: '../assets/images/corong 1.png', deskripsi: '', bahan: '' },
 
     // --- Kategori COOKIES ---
     { id: 25, kategori: 'cookies', nama: 'Cookies Coklat', tipe: 'Cookies', harga: 76000, rating: 4.9, gambar: '../assets/images/cookies/1-cookies-coklat.png', deskripsi: 'Kue kering cokelat klasik yang renyah dengan rasa cokelat pekat yang otentik.', bahan: 'Bubuk Cokelat, Tepung Terigu, Mentega, Telur, Gula' },
