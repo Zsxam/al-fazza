@@ -1297,3 +1297,13 @@ body.bg-pastel {
         font-size: 2rem;
     }
 }
+
+/* 1. Memberikan efek animasi transisi yang mulus pada panah */
+summary .arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+/* 2. Saat tag <details> memiliki atribut 'open' (terbuka), putar panah 180 derajat ke atas */
+details[open] summary .arrow-icon {
+    transform: rotate(180deg);
+}
