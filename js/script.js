@@ -1,9 +1,6 @@
-// ==========================================
-// 1. DATA PRODUK (Disatukan & Disempurnakan)
-// ==========================================
-// Semua data produk kini terpusat di satu array ini
+// 1. Data Produk Al-Fazza
 const produkToko = [
-    // --- Kategori BOLU ---
+    // Kategori Bolu
     { id: 1, kategori: 'bolu', nama: 'Cheese Cake', tipe: 'Kue Bolu', harga: 13500, rating: 4.9, gambar: './assets/images/bolu/1-bolukeju.png', deskripsi: 'Premium Cheese Long Cake dengan roti sisir premium dan cream cheese gurih.', bahan: 'Keju Cheddar, Cream Cheese, Tepung Terigu, Telur' },
     { id: 2, kategori: 'bolu', nama: 'Meses', tipe: 'Kue Bolu', harga: 11900, rating: 4.9, gambar: './assets/images/bolu/2-bolumeses.png', deskripsi: 'Roti lembut dengan olesan krim manis dan taburan meses cokelat klasik.', bahan: 'Meses Cokelat, Krim Manis, Tepung Terigu, Mentega' },
     { id: 3, kategori: 'bolu', nama: 'Coffee Raisin', tipe: 'Bolu Puding', harga: 31700, rating: 4.9, gambar: './assets/images/bolu/3-bolupuding.png', deskripsi: 'Bolu aroma kopi berlapis puding segar dengan kismis pilihan.', bahan: 'Ekstrak Kopi, Kismis, Agar-agar, Telur' },
@@ -17,7 +14,7 @@ const produkToko = [
     { id: 11, kategori: 'bolu', nama: 'Raisin Muffin', tipe: 'Bolu', harga: 11900, rating: 4.9, gambar: './assets/images/bolu/11-raisinmuffin.png', deskripsi: 'Muffin klasik yang padat namun lembut, dipenuhi dengan potongan kismis manis di setiap gigitannya.', bahan: 'Kismis, Tepung Terigu, Mentega, Telur, Baking Powder' },
     { id: 12, kategori: 'bolu', nama: 'Coklat Muffin', tipe: 'Bolu', harga: 11900, rating: 4.9, gambar: './assets/images/bolu/12-chocolatemuffin.png', deskripsi: 'Muffin cokelat kaya rasa dengan taburan choco chips lezat yang lumer di mulut.', bahan: 'Bubuk Kakao, Choco Chips, Tepung Terigu, Mentega, Susu' },
     
-    // --- Kategori PASTRY ---
+    // Kategori Pastry
     { id: 13, kategori: 'pastry', nama: 'Mushroom', tipe: 'Pastry', harga: 11900, rating: 4.9, gambar: './assets/images/pastry/1-mushroom-pastry.png', deskripsi: 'Pastry renyah dengan isian krim jamur gurih yang creamy dan kaya rempah.', bahan: 'Jamur Champignon, Krim Susu, Kulit Pastry, Bawang Bombay' },
     { id: 14, kategori: 'pastry', nama: 'Chicken Pies', tipe: 'Pastry', harga: 11900, rating: 4.9, gambar: './assets/images/pastry/2-chicken-pie.png', deskripsi: 'Pai gurih dengan isian daging ayam cincang, wortel, dan kentang dalam saus creamy yang nikmat.', bahan: 'Daging Ayam Cincang, Sayuran Campur, Susu, Kulit Pie' },
     { id: 15, kategori: 'pastry', nama: 'Croissant Penyet', tipe: 'Pastry', harga: 11600, rating: 4.9, gambar: './assets/images/pastry/3-croissant-penyet.png', deskripsi: 'Inovasi croissant viral yang dipipihkan hingga renyah maksimal, berlapis mentega gurih.', bahan: 'Adonan Croissant, Mentega Premium, Ragi, Gula' },
@@ -35,7 +32,7 @@ const produkToko = [
     { id: 51, kategori: 'pastry', nama: 'Croissant', tipe: 'Pastry', harga: 30000, rating: 4.9, gambar: './assets/images/krasong 1.png', deskripsi: '', bahan: '' },
     { id: 52, kategori: 'pastry', nama: 'Kue Corong', tipe: 'Pastry', harga: 30000, rating: 4.9, gambar: './assets/images/corong 1.png', deskripsi: '', bahan: '' },
 
-    // --- Kategori COOKIES ---
+    // Kategori Cookies
     { id: 25, kategori: 'cookies', nama: 'Cookies Coklat', tipe: 'Cookies', harga: 76000, rating: 4.9, gambar: './assets/images/cookies/1-cookies-coklat.png', deskripsi: 'Kue kering cokelat klasik yang renyah dengan rasa cokelat pekat yang otentik.', bahan: 'Bubuk Cokelat, Tepung Terigu, Mentega, Telur, Gula' },
     { id: 26, kategori: 'cookies', nama: 'Cookies Hati', tipe: 'Cookies', harga: 76000, rating: 4.9, gambar: './assets/images/cookies/2-cookies-hati.png', deskripsi: 'Kue kering berbentuk hati yang manis dan cantik, cocok untuk bingkisan atau camilan.', bahan: 'Tepung Terigu, Mentega, Gula Halus, Telur, Vanilla' },
     { id: 27, kategori: 'cookies', nama: 'Kaasstengels', tipe: 'Cookies', harga: 151500, rating: 4.9, gambar: './assets/images/cookies/3-kaasstengels.png', deskripsi: 'Kue kering gurih khas Belanda dengan paduan keju edam dan cheddar premium yang renyah.', bahan: 'Keju Edam, Keju Cheddar, Mentega, Tepung Terigu, Kuning Telur' },
@@ -49,7 +46,7 @@ const produkToko = [
     { id: 35, kategori: 'cookies', nama: 'Soes Kering', tipe: 'Cookies', harga: 36000, rating: 4.9, gambar: './assets/images/cookies/11-soes-kering.png', deskripsi: 'Choux pastry versi kering yang digigit renyah kopong dengan rasa gurih mentega yang khas.', bahan: 'Tepung Terigu, Telur, Mentega, Garam' },
     { id: 36, kategori: 'cookies', nama: 'Roti Bagelen Keju', tipe: 'Cookies', harga: 33200, rating: 4.9, gambar: './assets/images/cookies/12-roti-bagelen-keju.png', deskripsi: 'Roti kering renyah dengan olesan mentega manis dan taburan keju cheddar parut tebal.', bahan: 'Roti Manis Kering, Mentega, Keju Cheddar, Gula Pasir' },
 
-    // --- Kategori ROTI ---
+    // Kategori Roti
     { id: 37, kategori: 'roti', nama: 'Choco Custard', tipe: 'Roti', harga: 14600, rating: 4.9, gambar: './assets/images/roti/1-choco-custard.png', deskripsi: 'Roti manis super lembut dengan isian paduan vla custard creamy dan lelehan cokelat.', bahan: 'Tepung Terigu, Krim Custard, Cokelat Leleh, Susu, Ragi' },
     { id: 38, kategori: 'roti', nama: 'Roti Kelapa', tipe: 'Roti', harga: 11000, rating: 4.9, gambar: './assets/images/roti/2-roti-kelapa.png', deskripsi: 'Roti jadul nan empuk dengan isian unti kelapa parut manis legit yang khas.', bahan: 'Kelapa Parut, Gula Merah, Tepung Terigu, Mentega, Ragi' },
     { id: 39, kategori: 'roti', nama: 'Garlic Cream', tipe: 'Roti', harga: 16900, rating: 4.9, gambar: './assets/images/roti/3-garlic-cream.png', deskripsi: 'Roti gurih khas Korea dengan lelehan cream cheese dan baluran saus mentega bawang putih.', bahan: 'Bawang Putih, Cream Cheese, Peterseli, Mentega, Tepung Terigu' },
@@ -63,9 +60,8 @@ const produkToko = [
     { id: 47, kategori: 'roti', nama: 'Ikan Tuna', tipe: 'Roti', harga: 15100, rating: 4.9, gambar: './assets/images/roti/11-ikan-tuna.png', deskripsi: 'Roti gurih dengan isian tumisan ikan tuna suwir pedas manis dan potongan bawang bombay.', bahan: 'Ikan Tuna Suwir, Bawang Bombay, Mayones, Tepung Terigu, Ragi' },
     { id: 48, kategori: 'roti', nama: 'Roti Srikaya', tipe: 'Roti', harga: 11700, rating: 4.9, gambar: './assets/images/roti/12-isi-srikaya.png', deskripsi: 'Roti manis lembut dengan isian selai srikaya pandan tradisional yang wangi dan legit.', bahan: 'Selai Srikaya Pandan, Santan, Telur, Tepung Terigu, Ragi' },
 ];
-// ==========================================
-// 2. STATE & inisialisasi
-// ==========================================
+
+// 2. State & inisialisasi
 let cart = JSON.parse(localStorage.getItem('alfazza_cart')) || [];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -76,15 +72,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if(window.location.pathname.includes('checkout.html')) renderCheckoutSummary();
 });
 
-// ==========================================
-// 3. FUNGSI KERANJANG (CART) UTAMA
-// ==========================================
+// 3. Fungsi Keranjang Utama
 function saveCart() {
     localStorage.setItem('alfazza_cart', JSON.stringify(cart));
     updateCartUI();
 }
 
-// Fungsi serbaguna untuk tambah barang (dari katalog atau detail)
 function addToCart(nama, harga, gambar, qty = 1) {
     let item = cart.find(i => i.name === nama);
     if (item) item.quantity += qty;
@@ -125,9 +118,7 @@ function updateCartUI() {
     }
 }
 
-// ==========================================
-// 4. FUNGSI RENDER HALAMAN (Kategori & Detail)
-// ==========================================
+// 4. Fungsi Render Halaman Kategori & Detail
 function renderKategoriProduk() {
     const grid = document.getElementById('kategori-grid');
     if (!grid) return;
@@ -165,7 +156,6 @@ function renderDetailProduk() {
         return;
     }
 
-    // Set Data Detail
     titleElem.innerText = data.nama;
     document.getElementById('product-price').innerText = `Rp ${data.harga.toLocaleString('id-ID')}`;
     document.getElementById('product-tagline').innerText = `${data.nama} - ${data.tipe}`;
@@ -173,7 +163,6 @@ function renderDetailProduk() {
     document.getElementById('product-img').src = data.gambar;
     if(document.getElementById('bahan')) document.getElementById('bahan').innerText = data.bahan || "-";
 
-    // Ganti tombol Add to Cart di halaman detail untuk memakai fungsi addToCart dengan parameter lengkap
     const btnAddQty = document.querySelector('.btn-primary-cart');
     if(btnAddQty) {
         btnAddQty.onclick = () => {
@@ -182,7 +171,7 @@ function renderDetailProduk() {
         };
     }
 
-    // Render 4 Rekomendasi
+    // Render 4 Rekomendasi Produk
     const gridRek = document.getElementById('recommendation-grid');
     if (gridRek) {
         gridRek.innerHTML = produkToko.filter(p => p.id !== data.id).slice(0, 4).map(item => `
@@ -210,9 +199,7 @@ function changeQty(amount) {
     }
 }
 
-// ==========================================
-// 5. CHECKOUT & UTILITY
-// ==========================================
+// 5. Checkout
 function renderCheckoutSummary() {
     const list = document.getElementById('checkout-order-list');
     if (!list) return;
@@ -261,7 +248,7 @@ function loadComponent(id, file) {
             const navOverlay = document.getElementById('nav-overlay');
             const categoriesDropdown = document.getElementById('categories-dropdown');
 
-            // Pasang event listener keranjang setelah header dimuat
+            // Keranjang Menu
             document.getElementById('cart-btn')?.addEventListener('click', () => {
                 document.getElementById('cart-sidebar').classList.add('active');
                 document.getElementById('cart-overlay').classList.add('active');
@@ -277,9 +264,9 @@ function loadComponent(id, file) {
                 if(cart.length === 0) return alert("Keranjang kosong!");
                 window.location.href = 'checkout.html';
             });
-            updateCartUI(); // Update UI keranjang yang ada di header
+            updateCartUI(); 
 
-            // ---- Hamburger Menu Logic ----
+            // Hamburger Menu
             function openNav() {
                 hamburger?.classList.add('active');
                 mainNav?.classList.add('open');
@@ -309,16 +296,14 @@ function loadComponent(id, file) {
             });
 
             // Tutup nav saat salah satu link diklik
-            mainNav?.querySelectorAll('.nav-links li:not(.dropdown) a, .dropdown-menu a').forEach(link => {
+            mainNav?.querySelectorAll('.nav-links li:not(.dropdown) a, .dropdown-menu a, #cart-btn').forEach(link => {
                 link.addEventListener('click', closeNav);
             });
         }
     });
 }
 
-// ==========================================
-// 6. FUNGSI CUSTOM ORDER CAKE
-// ==========================================
+// 6. Fungsi Custom Order
 
 // Fungsi untuk memunculkan/menyembunyikan field alamat pengiriman
 function toggleAlamatCustom() {
@@ -363,10 +348,10 @@ function prosesCustomOrderWA() {
 
     // Format Pesan WA
     let wa = `Halo *AL-Fazza Bakery*, saya ingin melakukan *Custom Order Cake*.\n\n`;
-    wa += `👤 *DATA PEMESAN*\n- Nama: ${nama}\n- HP: ${nohp}\n\n`;
-    wa += `🎂 *SPESIFIKASI KUE*\n- Ukuran: ${ukuran}\n- Bentuk: ${bentuk}\n- Base Cake: ${rasa}\n- Isian: ${isian}\n\n`;
-    wa += `🎨 *DETAIL DESAIN*\n- Tema/Warna: ${tema}\n- Tulisan di Kue: ${tulisan}\n\n`;
-    wa += `🚚 *PENGIRIMAN*\n- Tanggal: ${tanggal}\n- Metode: ${metode}\n`;
+    wa += `*DATA PEMESAN*\n- Nama: ${nama}\n- HP: ${nohp}\n\n`;
+    wa += `*SPESIFIKASI KUE*\n- Ukuran: ${ukuran}\n- Bentuk: ${bentuk}\n- Base Cake: ${rasa}\n- Isian: ${isian}\n\n`;
+    wa += `*DETAIL DESAIN*\n- Tema/Warna: ${tema}\n- Tulisan di Kue: ${tulisan}\n\n`;
+    wa += `*PENGIRIMAN*\n- Tanggal: ${tanggal}\n- Metode: ${metode}\n`;
     
     if (metode === "Dikirim") {
         wa += `- Alamat: ${alamat}\n`;
@@ -375,6 +360,5 @@ function prosesCustomOrderWA() {
     wa += `\n📝 *Catatan Tambahan:* ${catatan}\n\n`;
     wa += `_(Saya akan mengirimkan gambar referensi desainnya setelah pesan ini)_`;
 
-    // Ubah nomor WA di bawah ini dengan nomor admin Al-Fazza yang sama seperti di prosesCheckoutWA
     window.open(`https://wa.me/6281221315946?text=${encodeURIComponent(wa)}`);
 }

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -79,34 +80,27 @@ body.bg-pastel {
     font-weight: bold;
 }
 
-/* =========================================
-   DROPDOWN MENU NAVIGASI
-   ========================================= */
-/* Memastikan dropdown posisinya relatif terhadap menu utamanya */
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
-/* Kotak Dropdown (Disembunyikan secara default) */
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%; /* Muncul tepat di bawah tulisan Categories */
-    left: -30%;
+    top: 100%;
+    left: -55%;
     text-align: center;
-    /* transform: translateX(-50%); */
     background-color: var(--white);
-    min-width: 180px; /* Lebar kotak dropdown */
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* Bayangan lembut */
+    min-width: 180px; 
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     border-radius: 8px;
     padding: 10px 0;
     z-index: 1000;
-    list-style: none; /* Menghilangkan titik bullet */
-    margin-top: 15px; /* Jarak sedikit dari navbar utama */
+    list-style: none;
+    margin-top: 15px; 
 }
 
-/* Jembatan tak terlihat agar dropdown tidak hilang saat mouse turun */
 .dropdown::after {
     content: '';
     position: absolute;
@@ -116,9 +110,8 @@ body.bg-pastel {
     left: 0;
 }
 
-/* Gaya tulisan link di dalam dropdown */
 .dropdown-menu li a {
-    color: var(--text-dark, #333); /* Mengubah warna tulisan jadi gelap */
+    color: var(--text-dark, #333); 
     padding: 10px 20px;
     display: block;
     font-size: 1rem;
@@ -126,43 +119,39 @@ body.bg-pastel {
     transition: all 0.3s ease;
 }
 
-/* Efek saat link di dalam dropdown disorot/di-hover */
 .dropdown-menu li a:hover {
     background-color: var(--primary-brown);
     color: var(--white);
-    padding-left: 25px; /* Efek geser teks sedikit ke kanan yang elegan */
+    padding-left: 25px; 
 }
 
-/* Menampilkan dropdown SAAT mouse menyorot menu Categories */
 .dropdown:hover .dropdown-menu {
     display: block;
-    animation: fadeIn 0.3s ease; /* Tambahan animasi muncul perlahan */
+    animation: fadeIn 0.3s ease;
 }
 
-/* Animasi sederhana */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- CART SIDEBAR --- */
+/* Cart Sidebar */
 .cart-sidebar {
     position: fixed;
     top: 0;
-    right: -100%; /* Sembunyikan jauh di luar layar kanan */
+    right: -100%; 
     width: 400px;
     height: 100vh;
     background-color: #fff;
     box-shadow: -5px 0 15px rgba(0,0,0,0.1);
     z-index: 1200;
-    transition: right 0.4s ease-in-out; /* Animasi mulus saat ditarik */
+    transition: right 0.4s ease-in-out;
     display: flex;
     flex-direction: column;
 }
 
-/* Class ini akan ditambahkan oleh JS saat tombol keranjang diklik */
 .cart-sidebar.active {
-    right: 0; /* Tarik masuk ke dalam layar */
+    right: 0;
 }
 
 .cart-header {
@@ -182,9 +171,9 @@ body.bg-pastel {
 }
 
 .cart-items {
-    flex-grow: 1; /* Area item mengisi sisa ruang yang ada */
+    flex-grow: 1;
     padding: 20px;
-    overflow-y: auto; /* Memungkinkan scroll jika item banyak */
+    overflow-y: auto;
 }
 
 .cart-item {
@@ -257,7 +246,7 @@ body.bg-pastel {
     background-color: var(--dark-brown);
 }
 
-/* --- CART OVERLAY (Latar Belakang Gelap) --- */
+/* Cart Overlay (Latar Belakang Gelap) */
 .cart-overlay {
     position: fixed;
     top: 0;
@@ -309,7 +298,7 @@ body.bg-pastel {
     margin-top: 20px;
 }
 
-/* Section Cokelat (Popular & New) */
+/* Section Cokelat (Terlaris) */
 .brown-section {
     background-color: var(--primary-brown);
     text-align: center;
@@ -328,14 +317,13 @@ body.bg-pastel {
     display: flex;
     align-items: center;
     background: white;
-    border-radius: 10px; /* Di gambar terlihat agak rounded kotak */
+    border-radius: 10px; 
     padding: 10px;
     width: 300px;
-    cursor: pointer; /* Menjadikan kursor seperti tangan saat diarahkan */
-    transition: transform 0.3s ease; /* Animasi mulus saat di-hover */
+    cursor: pointer; 
+    transition: transform 0.3s ease;
 }
 
-/* Efek membesar sedikit saat gambar disorot */
 .circular-item:hover {
     transform: scale(1.05);
 }
@@ -400,7 +388,7 @@ body.bg-pastel {
 }
 
 .rating i {
-    color: #fdd835; /* Bintang kuning */
+    color: #fdd835;
 }
 
 .title-cat h3 {
@@ -430,7 +418,7 @@ body.bg-pastel {
 }
 
 .btn-add-cart {
-    background-color: var(--secondary); /* Coklat bata */
+    background-color: var(--secondary);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -443,7 +431,6 @@ body.bg-pastel {
     background-color: var(--dark-brown);
 }
 
-/* Container Utility */
 .section-title {
     text-align: center;
     margin: 40px 0 20px;
@@ -476,9 +463,7 @@ body.bg-pastel {
 
 .promo-card img { width: 60px; }
 
-/* =========================================
-   ABOUT US SECTION
-   ========================================= */
+/* ABOUT US SECTION */
 .about-us {
     display: flex;
     align-items: center;
@@ -540,14 +525,13 @@ body.bg-pastel {
     background-color: var(--dark-brown);
 }
 
-/* --- HALAMAN KATEGORI --- */
+/* Halaman Kategori */
 .kategori-container {
     max-width: 1200px;
     margin: 30px auto;
     padding: 0 20px;
 }
 
-/* Banner Kembar */
 .banner-wrapper {
     display: flex;
     gap: 20px;
@@ -556,19 +540,18 @@ body.bg-pastel {
 
 .promo-banner {
     flex: 1;
-    background-color: #2c2522; /* Coklat super gelap */
+    background-color: #2c2522; 
     color: white;
     padding: 40px;
     border-radius: 12px;
     position: relative;
     overflow: hidden;
-    /* Opsional: Tambahkan background image pattern melingkar di sini nanti */
 }
 
 .promo-banner h2 { font-size: 1.8rem; margin-bottom: 10px; }
 .promo-banner p { font-size: 0.9rem; color: #ccc; margin-bottom: 20px; }
 .btn-brown {
-    background-color: var(--primary-brown); /* Coklat bata */
+    background-color: var(--primary-brown); 
     color: white;
     border: none;
     padding: 10px 20px;
@@ -580,17 +563,14 @@ body.bg-pastel {
     background-color: var(--dark-brown);
 }
 
-/* Header Kategori (Judul & View All) */
 .kategori-header {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
 }
-.kategori-header h3 { color: #8a6c76; font-size: 1.2rem; }
-.kategori-header .view-all { color: #4267b2; text-decoration: none; font-size: 0.9rem; font-weight: bold; }
+.kategori-header h3 { color: #222; font-size: 2rem; font-weight: 800; }
 
-/* Product Grid 4 Kolom */
 .kategori-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -656,6 +636,7 @@ body.bg-pastel {
     font-size: 1.0rem;
 }
 
+/* Halaman Checkout */
 .bg-light { background-color: #f8f9fa; }
 
 .checkout-container {
@@ -793,11 +774,8 @@ body.bg-pastel {
 .btn-bayar-wa:hover { background-color: #0d1b2a; }
 
 
-/* =========================================
-   HALAMAN DETAIL PRODUK
-   ========================================= */
+/* Halaman Detail Produk */
 
-/* Wadah Utama Detail */
 .container-detail {
     max-width: 1200px;
     margin: 40px auto;
@@ -805,7 +783,6 @@ body.bg-pastel {
     font-family: Arial, sans-serif;
 }
 
-/* Membagi Gambar (Kiri) dan Info (Kanan) menjadi 2 Kolom */
 .main-info {
     display: flex;
     gap: 50px;
@@ -813,9 +790,9 @@ body.bg-pastel {
     margin-bottom: 60px;
 }
 
-/* Kolom Gambar Kiri */
+/* Kolom Kiri (Gambar) */
 .product-gallery {
-    flex: 1; /* Mengambil 50% lebar */
+    flex: 1; 
     background-color: #f8f8f8;
     border-radius: 12px;
     display: flex;
@@ -831,12 +808,11 @@ body.bg-pastel {
     border-radius: 12px;
 }
 
-/* Kolom Info Kanan */
+/* Kolom Kanan (Info Produk) */
 .product-order {
-    flex: 1; /* Mengambil 50% lebar */
+    flex: 1; 
 }
 
-/* Baris Judul, Rating, dan Love */
 .title-row {
     display: flex;
     align-items: center;
@@ -850,15 +826,6 @@ body.bg-pastel {
     color: #000;
 }
 
-.rating-badge {
-    font-size: 1rem;
-    color: #333;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-/* Tagline & Harga */
 .tagline {
     color: #666;
     margin-bottom: 15px;
@@ -872,7 +839,6 @@ body.bg-pastel {
     color: #000;
 }
 
-/* Tombol Add to Cart & Qty */
 .order-controls {
     display: flex;
     gap: 15px;
@@ -918,10 +884,9 @@ body.bg-pastel {
     border: none;
     font-size: 1.1rem;
     outline: none;
-    pointer-events: none; /* Agar tidak bisa diketik manual */
+    pointer-events: none;
 }
 
-/* Dropdown Informasi (Accordion) */
 .info-dropdown details {
     border-top: 1px solid #eee;
     padding: 15px 0;
@@ -935,7 +900,7 @@ body.bg-pastel {
     font-weight: bold;
     font-size: 1.1rem;
     cursor: pointer;
-    list-style: none; /* Hilangkan panah bawaan */
+    list-style: none; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -956,10 +921,8 @@ body.bg-pastel {
     margin-bottom:20px;
 }
 
-/* =========================================
-   BAGIAN ULASAN (UPDATE 3 KOLOM)
-   ========================================= */
-   .review-section {
+/* Kolom Review */
+.review-section {
     border-top: 1px solid #ddd;
     padding-top: 40px;
     margin-top: 40px;
@@ -972,7 +935,6 @@ body.bg-pastel {
     align-items: flex-start;
 }
 
-/* Kolom 1 Kiri: Angka */
 .review-left {
     flex: 1;
     text-align: center;
@@ -1007,13 +969,12 @@ body.bg-pastel {
     margin-top: 5px;
 }
 
-/* Kolom 2 Tengah: Bar */
 .review-middle {
     flex: 1.5;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    padding-top: 45px; /* Menyejajarkan dengan angka */
+    padding-top: 45px; 
 }
 
 .bar-row {
@@ -1053,7 +1014,6 @@ body.bg-pastel {
     font-size: 0.8rem;
 }
 
-/* Kolom 3 Kanan: Komentar */
 .review-right {
     flex: 2;
 }
@@ -1099,9 +1059,6 @@ body.bg-pastel {
     margin: 20px 0;
 }
 
-/* =========================================
-   KARTU "MUNGKIN ANDA SUKA" (DETAIL PRODUK)
-   ========================================= */
 #recommendation-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1113,9 +1070,8 @@ body.bg-pastel {
     padding-top: 40px;
     padding-bottom: 40px;
 }
-/* =========================================
-   HALAMAN ABOUT US (about.html)
-   ========================================= */
+
+/* Halaman Tentang Kami */
 .about-page-container {
     max-width: 1100px;
     margin: 60px auto;
@@ -1166,14 +1122,13 @@ body.bg-pastel {
     justify-content: center;
 }
 
-/* Membuat gaya bingkai seperti polaroid di gambar referensi */
 .framed-img {
     background-color: white;
     padding: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid #eaeaea;
     border-radius: 4px;
-    display: inline-block; /* Agar menyesuaikan ukuran gambar */
+    display: inline-block; 
     max-width: 100%;
 }
 
@@ -1184,12 +1139,9 @@ body.bg-pastel {
     display: block;
 }
 
-/* =========================================
-   CUSTOM CAKE BANNER (index.html)
-   ========================================= */
+/* Custom Cake Banner */
 .custom-cake-banner {
     background-image: linear-gradient(rgba(74, 59, 50, 0.8), rgba(74, 59, 50, 0.8)), url('../assets/images/cookies/1-cookies-coklat.png'); 
-    /* Kamu bisa ganti url gambarnya dengan foto kue ulang tahun Al-Fazza nanti */
     background-size: cover;
     background-position: center;
     margin: 0 13% 60px;
@@ -1216,9 +1168,7 @@ body.bg-pastel {
     color: #f2e8df;
 }
 
-/* =========================================
-   INSTRUCTION BOX (CUSTOM ORDER)
-   ========================================= */
+/* Custom Order */
 .instruction-box {
     padding: 20px;
     font-size: 0.95rem;
@@ -1235,24 +1185,19 @@ body.bg-pastel {
     margin-bottom: 10px;
 }
 
-/* Biar list terakhir gak ada margin bawah berlebih */
 .instruction-list li:last-child {
     margin-bottom: 0;
 }
 
-/* 1. Memberikan efek animasi transisi yang mulus pada panah */
 summary .arrow-icon {
     transition: transform 0.3s ease;
 }
 
-/* 2. Saat tag <details> memiliki atribut 'open' (terbuka), putar panah 180 derajat ke atas */
 details[open] summary .arrow-icon {
     transform: rotate(180deg);
 }
 
-/* =========================================
-   HAMBURGER MENU (MOBILE NAV)
-   ========================================= */
+/* Hamburger Menu */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -1284,9 +1229,7 @@ details[open] summary .arrow-icon {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* =========================================
-   RESPONSIVE — TABLET (≤ 992px)
-   ========================================= */
+/* Responsive Tablet (≤ 992px) */
 @media (max-width: 992px) {
     /* Navbar */
     .nav {
@@ -1329,6 +1272,7 @@ details[open] summary .arrow-icon {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    /* Promo Banner */
     .promo-container {
         align-items: center;
         padding: 15px 5%;
@@ -1345,7 +1289,7 @@ details[open] summary .arrow-icon {
         padding: 10px;
     }
 
-    /* About us section (homepage) */
+    /* About us section */
     .about-us {
         margin: 0 5% 40px;
     }
@@ -1379,11 +1323,9 @@ details[open] summary .arrow-icon {
     }
 }
 
-/* =========================================
-   RESPONSIVE — MOBILE (≤ 768px)
-   ========================================= */
+/* Responsive Mobile (≤ 768px) */
 @media (max-width: 768px) {
-    /* ---- NAVBAR ---- */
+    /* Navbar */
     .hamburger {
         display: flex;
     }
@@ -1427,7 +1369,7 @@ details[open] summary .arrow-icon {
         font-size: 1.1rem;
     }
 
-    /* Dropdown inside mobile nav */
+    /* Dropdown di mobile nav */
     .dropdown-menu {
         position: static;
         display: block;
@@ -1477,7 +1419,7 @@ details[open] summary .arrow-icon {
         visibility: visible;
     }
 
-    /* ---- HERO ---- */
+    /* Hero */
     .hero {
         flex-direction: column-reverse;
         padding: 30px 5%;
@@ -1498,7 +1440,7 @@ details[open] summary .arrow-icon {
         width: 80%;
     }
 
-    /* ---- POPULAR BAKERY ---- */
+    /* Kue Terlaris */
     .item-list {
         flex-wrap: wrap;
         gap: 12px;
@@ -1509,7 +1451,7 @@ details[open] summary .arrow-icon {
         width: calc(50% - 6px);
     }
 
-    /* ---- NEW BAKERY GRID ---- */
+    /* Product Grid */
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
         margin: 20px 3%;
@@ -1545,7 +1487,7 @@ details[open] summary .arrow-icon {
         font-size: 0.85rem;
     }
 
-    /* ---- PROMO CONTAINER ---- */
+    /* Promo Banner */
     .promo-container {
         flex-direction: column;
         align-items: center;
@@ -1563,7 +1505,7 @@ details[open] summary .arrow-icon {
         padding: 10px;
     }
 
-    /* ---- ABOUT US (HOMEPAGE) ---- */
+    /* Tentang Kami */
     .about-us {
         flex-direction: column;
         margin: 0 5% 40px;
@@ -1587,7 +1529,7 @@ details[open] summary .arrow-icon {
         text-align: center;
     }
 
-    /* ---- CUSTOM CAKE BANNER ---- */
+    /* Custom Cake */
     .custom-cake-banner {
         margin: 0 5% 40px;
         padding: 40px 20px;
@@ -1601,13 +1543,13 @@ details[open] summary .arrow-icon {
         font-size: 0.95rem;
     }
 
-    /* ---- SECTION TITLE ---- */
+    /* Section Title */
     .section-title {
         font-size: 1.5rem;
         margin: 30px 0 15px;
     }
 
-    /* ---- FOOTER ---- */
+    /* Footer */
     .footer-content {
         flex-direction: column;
         align-items: center;
@@ -1629,7 +1571,7 @@ details[open] summary .arrow-icon {
         justify-content: center;
     }
 
-    /* ---- KATEGORI PAGE ---- */
+    /* Halaman Kategori */
     .banner-wrapper {
         flex-direction: column;
         gap: 12px;
@@ -1644,7 +1586,7 @@ details[open] summary .arrow-icon {
         gap: 12px;
     }
 
-    /* ---- DETAIL PRODUK ---- */
+    /* Halaman Detail */
     .main-info {
         flex-direction: column;
         gap: 20px;
@@ -1688,7 +1630,7 @@ details[open] summary .arrow-icon {
         gap: 15px;
     }
 
-    /* ---- CHECKOUT & CUSTOM ORDER ---- */
+    /* Checkout */
     .checkout-container {
         flex-direction: column;
         margin: 20px auto;
@@ -1709,7 +1651,7 @@ details[open] summary .arrow-icon {
         gap: 0;
     }
 
-    /* ---- ABOUT PAGE ---- */
+    /* Halaman Tentang Kami */
     .about-row {
         flex-direction: column-reverse;
         gap: 25px;
@@ -1729,15 +1671,13 @@ details[open] summary .arrow-icon {
         text-align: center;
     }
 
-    /* ---- CART SIDEBAR ---- */
+    /* Cart Sidebar */
     .cart-sidebar {
         width: 100%;
     }
 }
 
-/* =========================================
-   RESPONSIVE — SMALL MOBILE (≤ 480px)
-   ========================================= */
+/* Responsive Mobile Kecil (≤ 480px) */
 @media (max-width: 480px) {
     .hero-content h1 {
         font-size: 1.7rem;
