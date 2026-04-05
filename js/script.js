@@ -253,10 +253,16 @@ function loadComponent(id, file) {
     fetch(file).then(res => res.text()).then(html => {
         document.getElementById(id).innerHTML = html;
         if (id === "header-placeholder") {
+            const hamburger = document.getElementById('hamburger-btn');
+            const mainNav = document.getElementById('main-nav');
+            const navOverlay = document.getElementById('nav-overlay');
+            const categoriesDropdown = document.getElementById('categories-dropdown');
+
             // Pasang event listener keranjang setelah header dimuat
             document.getElementById('cart-btn')?.addEventListener('click', () => {
                 document.getElementById('cart-sidebar').classList.add('active');
                 document.getElementById('cart-overlay').classList.add('active');
+                closeNav(); 
             });
             document.querySelectorAll('#close-cart, #cart-overlay').forEach(el => 
                 el.addEventListener('click', () => {
@@ -271,11 +277,6 @@ function loadComponent(id, file) {
             updateCartUI(); // Update UI keranjang yang ada di header
 
             // ---- Hamburger Menu Logic ----
-            const hamburger = document.getElementById('hamburger-btn');
-            const mainNav = document.getElementById('main-nav');
-            const navOverlay = document.getElementById('nav-overlay');
-            const categoriesDropdown = document.getElementById('categories-dropdown');
-
             function openNav() {
                 hamburger?.classList.add('active');
                 mainNav?.classList.add('open');
