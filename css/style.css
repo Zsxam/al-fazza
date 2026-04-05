@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -330,6 +331,13 @@ body.bg-pastel {
     border-radius: 10px; /* Di gambar terlihat agak rounded kotak */
     padding: 10px;
     width: 300px;
+    cursor: pointer; /* Menjadikan kursor seperti tangan saat diarahkan */
+    transition: transform 0.3s ease; /* Animasi mulus saat di-hover */
+}
+
+/* Efek membesar sedikit saat gambar disorot */
+.circular-item:hover {
+    transform: scale(1.05);
 }
 
 .circular-item img {
@@ -694,7 +702,7 @@ body.bg-pastel {
     font-size: 0.9rem;
 }
 
-.form-group input, .form-group textarea {
+.form-group input, .form-group textarea, .form-group select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -1198,6 +1206,30 @@ body.bg-pastel {
     margin-left: auto;
     margin-right: auto;
     color: #f2e8df;
+}
+
+/* =========================================
+   INSTRUCTION BOX (CUSTOM ORDER)
+   ========================================= */
+.instruction-box {
+    padding: 20px;
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.instruction-list {
+    padding-left: 15px;
+    margin-bottom: 0;
+}
+
+.instruction-list li {
+    margin-bottom: 10px;
+}
+
+/* Biar list terakhir gak ada margin bawah berlebih */
+.instruction-list li:last-child {
+    margin-bottom: 0;
 }
 
 /* 1. Memberikan efek animasi transisi yang mulus pada panah */
